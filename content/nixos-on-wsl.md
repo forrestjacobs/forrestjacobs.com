@@ -91,7 +91,7 @@ flakes, updating to NixOS 22.11, and enabling native _systemd_:
       };
 
       outputs = { self, nixpkgs, NixOS-WSL }: {
-        nixosConfigurations.<host-name> = nixpkgs.lib.nixosSystem {
+        nixosConfigurations."<host-name>" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             { nix.registry.nixpkgs.flake = nixpkgs; }
