@@ -29,6 +29,11 @@ a {
   text-decoration: underline var(--medium);
 }
 
+pre {
+  padding: 1rem;
+  overflow: auto;
+}
+
 .post-date {
   font-weight: bold;
 }
