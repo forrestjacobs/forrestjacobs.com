@@ -6,9 +6,20 @@
   --dark: #666;
   --darkest: #111;
   --black: #000;
-  --brand: #636;
-  --red: #900;
-  --green: #164;
+  --brand: #164;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #000;
+    --lightest: #222;
+    --light: #444;
+    --medium: #999;
+    --dark: #ccc;
+    --darkest: #eee;
+    --black: #fff;
+    --brand: #2db;
+  }
 }
 
 body {
