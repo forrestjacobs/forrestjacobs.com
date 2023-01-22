@@ -1,0 +1,50 @@
+:root {
+  --white: #fff;
+  --lightest: #ddd;
+  --light: #bbb;
+  --medium: #999;
+  --dark: #666;
+  --darkest: #111;
+  --black: #000;
+  --brand: #636;
+  --red: #900;
+  --green: #164;
+}
+
+body {
+  background: var(--lightest);
+  color: var(--darkest);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+#main-container {
+  padding: 2em 0;
+  margin: 0 auto;
+  max-width: 43.25em;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: underline var(--medium);
+}
+
+.post-date {
+  font-weight: bold;
+}
+
+.footnote-definition {
+  display: flex;
+}
+
+.footnote-definition-label {
+  vertical-align: baseline;
+  font-size: medium;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-end: 0.5em;
+}
+
+.footnote-definition-label::after {
+  content: ". ";
+}

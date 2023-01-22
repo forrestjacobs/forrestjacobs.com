@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ page.title }} – Forrest Jacobs
+{% endblock title %}
+
+{% block content %}
+<a href="{{ get_url(path='@/_index.md') }}">← Back to all posts</a>
+<h1 class="title">{{ page.title }}</h1>
+<div class="post-date">{{ page.date }}</div>
+{{ page.content | safe }}
+{% endblock content %}
