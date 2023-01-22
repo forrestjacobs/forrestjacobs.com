@@ -147,8 +147,8 @@ fish: Unknown command: ls
 in function 'ls'
 ```
 
-Uh oh. Obviously, there are important directories missing from my path. It turns out that I was missing configuration
-that tells NixOS to set up _fish_[^3]:
+Uh oh. Obviously, there are important directories missing from my path. It turns out that I was missing some
+configuration[^3]:
 
 ```
 programs.fish.enable = true;
@@ -169,6 +169,8 @@ whether the issue appears or not.
 before upgrading to a version of NixOS on WSL that supports it?
 
 [^2]: Thanks to [this Stack Exchange answer](https://superuser.com/a/1334839) for pointing me in the right direction.
+You don't have to follow the instructions in this post -- NixOS on WSL already mounts Windows's drives with the
+necessary options.
 
 [^3]: Thanks to [this GitHub issue](https://github.com/nix-community/NixOS-WSL/issues/192) for alerting me to the
       problem.
