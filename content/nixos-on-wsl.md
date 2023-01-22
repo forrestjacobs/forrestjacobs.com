@@ -42,8 +42,8 @@ Per [NixOS-WSL's documentation]:
     `wsl --import NixOS . nixos-wsl-installer.tar.gz --version 2`
 
  6. Run `wsl -d NixOS` to start NixOS. It'll run through initial setup, then hang on "Starting systemd..." Press
-    `Ctrl` + `C` to get back to PowerShell, and then run `wsl --shutdown` followed by `wsl -d NixOS` to get back into
-    NixOS.
+    <kbd>Ctrl</kbd> + <kbd>C</kbd> to get back to PowerShell, and then run `wsl --shutdown` followed by `wsl -d NixOS`
+    to get back into NixOS.
 
 [NixOS-WSL's documentation]: https://github.com/nix-community/NixOS-WSL#quick-start
 [NixOS-WSL's 22.05 release]: https://github.com/nix-community/NixOS-WSL/releases/tag/22.05-5c211b47
