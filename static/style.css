@@ -63,7 +63,10 @@ kbd {
 
 .footnote-reference {
   vertical-align: top;
-  margin: 0 0.2em;
+}
+
+.footnote-reference > a {
+  padding: 0 0.2em;
 }
 
 .footnote-definition {
