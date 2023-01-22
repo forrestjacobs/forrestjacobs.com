@@ -48,3 +48,7 @@ a {
 .footnote-definition-label::after {
   content: ". ";
 }
+
+#copyright {
+  margin-top: 6em;
+}
