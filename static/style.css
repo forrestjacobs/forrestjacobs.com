@@ -38,7 +38,7 @@ body {
 
 a {
   color: var(--brand);
-  text-decoration: underline var(--medium);
+  text-decoration-color: var(--medium);
 }
 
 pre {
