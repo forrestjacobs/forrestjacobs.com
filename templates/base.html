@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Forrest Jacobs{% endblock title %}</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
