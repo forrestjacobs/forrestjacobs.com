@@ -36,6 +36,10 @@ body {
   max-width: 43.25em;
 }
 
+#title {
+  color: var(--dark);
+}
+
 a {
   color: var(--brand);
   text-decoration-color: var(--medium);
@@ -52,13 +56,13 @@ kbd, code {
 }
 
 kbd {
-  background: var(--light);
+  background: var(--white);
   padding: 0.25em;
   border-radius: 0.25em;
 }
 
 hr {
-  border: 1px solid var(--medium);
+  border: 1px solid var(--light);
 }
 
 .post > header h1, .post > header h2 {
@@ -95,6 +99,6 @@ hr {
 }
 
 #main-container > footer {
-  font-size: 90%;
+  border-top: 1px solid var(--light);
   margin-top: 6em;
 }
