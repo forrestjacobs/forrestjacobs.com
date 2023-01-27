@@ -90,6 +90,7 @@ kbd {
   content: ". ";
 }
 
-#copyright {
+#main-container > footer {
+  font-size: 90%;
   margin-top: 6em;
 }
