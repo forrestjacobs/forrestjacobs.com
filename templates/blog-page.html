@@ -6,7 +6,11 @@
 
 {% block content %}
 <a href="{{ get_url(path='@/_index.md') }}">← Back to all posts</a>
-<h1 class="title">{{ page.title }}</h1>
+<article class="post">
+<header>
+<h1>{{ page.title }}</h1>
 <div class="post-date">{{ page.date }}</div>
+</header>
 {{ page.content | safe }}
+</article>
 {% endblock content %}

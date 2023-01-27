@@ -57,6 +57,11 @@ kbd {
   border-radius: 0.25em;
 }
 
+.post > header h1, .post > header h2 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
 .post-date {
   font-weight: bold;
 }
