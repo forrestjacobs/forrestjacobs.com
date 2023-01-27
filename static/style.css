@@ -57,6 +57,10 @@ kbd {
   border-radius: 0.25em;
 }
 
+hr {
+  border: 1px solid var(--medium);
+}
+
 .post > header h1, .post > header h2 {
   font-size: 1.5em;
   margin-bottom: 0;
