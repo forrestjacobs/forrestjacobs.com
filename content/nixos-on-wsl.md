@@ -5,7 +5,7 @@ date = 2023-01-22
 
 I recently set up a new Windows machine for gaming, but I'm actually using it more to play around with Linux via [WSL].
 I set up [NixOS] on WSL using the aptly named [NixOS on WSL] project, but ran into a few issues during setup that
-bricked my environment[^1]. Below are the steps that ended up working for me in the end:
+bricked my environment[^wsl-brick]. Below are the steps that ended up working for me in the end:
 
 [WSL]: https://learn.microsoft.com/en-us/windows/wsl/about
 [NixOS]: https://nixos.org/
@@ -124,8 +124,8 @@ flakes, updating to NixOS 22.11, and enabling native _systemd_:
 
 ## Addendum: Share `.ssh` directory with Windows
 
-It turns out that [file permissions set in WSL are preserved in NTFS][^2]. You can store your SSH configuration files in
-Windows, and still use them from WSL with no permissions issues:
+It turns out that [file permissions set in WSL are preserved in NTFS][^fs-perm-wsl-ntfs]. You can store your SSH
+configuration files in Windows, and still use them from WSL with no permissions issues:
 
 - Set up your `~/.ssh` in NixOS like normal.
 - Move your `~/.ssh` directory to Windows with `mv ~/.ssh /mnt/c/Users/<your Windows username>/.ssh`
@@ -148,7 +148,7 @@ in function 'ls'
 ```
 
 Uh oh. Obviously, there are important directories missing from my path. It turns out that I was missing some
-configuration[^3]:
+configuration[^fish-path-missing]:
 
 ```
 programs.fish.enable = true;
@@ -165,12 +165,12 @@ whether the issue appears or not.
 
 * * *
 
-[^1]: I _think_ I changed the default user without actually setting up that user? Or I switched to native _systemd_
-before upgrading to a version of NixOS on WSL that supports it?
+[^wsl-brick]: I _think_ I changed the default user without actually setting up that user? Or I switched to native
+_systemd_ before upgrading to a version of NixOS on WSL that supports it?
 
-[^2]: Thanks to [this Stack Exchange answer](https://superuser.com/a/1334839) for pointing me in the right direction.
-You don't have to follow the instructions in this post -- NixOS on WSL already mounts Windows's drives with the
-necessary options.
+[^fs-perm-wsl-ntfs]: Thanks to [this Stack Exchange answer](https://superuser.com/a/1334839) for pointing me in the
+right direction. You don't have to follow the instructions in this post -- NixOS on WSL already mounts Windows's drives
+with the necessary options.
 
-[^3]: Thanks to [this GitHub issue](https://github.com/nix-community/NixOS-WSL/issues/192) for alerting me to the
-      problem.
+[^fish-path-missing]: Thanks to [this GitHub issue](https://github.com/nix-community/NixOS-WSL/issues/192) for alerting
+me to the problem.
