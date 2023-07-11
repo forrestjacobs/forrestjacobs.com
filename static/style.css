@@ -77,6 +77,10 @@ a {
   text-decoration-color: var(--medium);
 }
 
+a:hover {
+  text-decoration-color: var(--dark);
+}
+
 pre {
   padding: 1rem;
   overflow: auto;
@@ -88,7 +92,7 @@ kbd, code {
 }
 
 kbd {
-  background: var(--white);
+  border: 1px solid var(--medium);
   padding: 0.25em;
   border-radius: 0.25em;
 }
