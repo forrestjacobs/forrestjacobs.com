@@ -10,6 +10,18 @@
 
 <body>
   <section id="main-container">
+    <div id="masthead">
+      <h1 id="title">
+        <a href="{{ get_url(path='@/_index.md') }}" class="current">Forrest Jacobs</a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="{{ get_url(path='@/_index.md') }}" class="current">Blog</a></li>
+          <li><a href="{{ get_url(path='@/pages/projects.md') }}" class="current">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+
     {% block content %}{% endblock %}
 
     <footer>

@@ -5,10 +5,9 @@
 {% endblock title %}
 
 {% block content %}
-<article class="post">
+<article>
 <header>
 <h2>{{ page.title }}</h2>
-<div class="post-date">{{ page.date }}</div>
 </header>
 {{ page.content | safe }}
 </article>

@@ -1,28 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 id="title">
-  {{ section.title }}
-</h1>
-
 {% for page in section.pages %}
   <article class="post">
   <header>
   <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
   <div class="post-date">{{ page.date }}</div>
   </header>
-  {{ page.content
-    | replace(from="<h5", to="<h6")
-    | replace(from="</h5", to="</h6")
-    | replace(from="<h4", to="<h5")
-    | replace(from="</h4", to="</h5")
-    | replace(from="<h3", to="<h4")
-    | replace(from="</h3", to="</h4")
-    | replace(from="<h2", to="<h3")
-    | replace(from="</h2", to="</h3")
-    | replace(from="<h1", to="<h2")
-    | replace(from="</h1", to="</h2")
-    | safe }}
+  {{ page.content | safe }}
   </article>
 {% endfor %}
 
