@@ -2,6 +2,9 @@
 
 base_url = "https://forrestjacobs.com"
 
+generate_feed = true
+feed_filename = "rss.xml"
+
 [markdown]
 highlight_code = true
 highlight_theme = "gruvbox-dark"

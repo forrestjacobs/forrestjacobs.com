@@ -150,6 +150,16 @@ header h2 {
   margin-top: 8em;
 }
 
+#main-container > footer > ul {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5em;
+  column-gap: 2em;
+  list-style-type: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
 /* Projects page */
 
 .project-list {

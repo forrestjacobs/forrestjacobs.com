@@ -6,6 +6,9 @@
   <title>{% block title %}Forrest Jacobs{% endblock title %}</title>
   <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  {% block rss %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+  {% endblock %}
 </head>
 
 <body>
@@ -25,10 +28,11 @@
     {% block content %}{% endblock %}
 
     <footer>
-      <p>
-        I’m also on <a rel="me" href="https://hachyderm.io/@forrestjacobs">Mastodon</a> and
-        <a rel="me" href="https://github.com/forrestjacobs">GitHub</a>.
-      </p>
+      <ul>
+        <li><a href="{{ get_url(path='rss.xml', trailing_slash=false) }}">RSS</a></li>
+        <li><a rel="me" href="https://hachyderm.io/@forrestjacobs">Mastodon</a></li>
+        <li><a rel="me" href="https://github.com/forrestjacobs">GitHub</a></li>
+      </ul>
       <a href="https://github.com/forrestjacobs/forrestjacobs.com/blob/main/LICENSE.txt">Copyright 2023 Forrest Jacobs</a>
     </footer>
   </section>
