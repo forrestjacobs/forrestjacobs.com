@@ -28,22 +28,22 @@ body {
   /* From https://github.com/twbs/bootstrap/blob/15744ee1d04bcca03155c3bb37ee7e65a7b011c6/scss/_variables.scss#L597 */
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
   line-height: 1.5;
-  padding: 1em;
-  margin: 1em auto;
-  max-width: 43.25em;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 43.25rem;
 
   > header {
-    padding: 1em 0;
-    margin-bottom: 2em;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    row-gap: 1em;
-    column-gap: 4em;
+    row-gap: 1rem;
+    column-gap: 4rem;
     border-bottom: 2px solid var(--light);
   
     > h1 {
-      font-size: 1.25em;
+      font-size: 1.25rem;
       font-weight: normal;
       margin: 0;
       > a {
@@ -55,26 +55,26 @@ body {
     > nav > ul {
       display: flex;
       flex-wrap: wrap;
-      row-gap: 0.5em;
-      column-gap: 2em;
+      row-gap: 0.5rem;
+      column-gap: 2rem;
       list-style-type: none;
       margin: 0;
       padding: 0;
       > li > a {
-        padding: 0.5em 0;
+        padding: 0.5rem 0;
       }
     }
   }  
 
   > footer {
-    margin-top: 8em;
+    margin-top: 8rem;
     > ul {
       display: flex;
       flex-wrap: wrap;
-      row-gap: 0.5em;
-      column-gap: 2em;
+      row-gap: 0.5rem;
+      column-gap: 2rem;
       list-style-type: none;
-      margin: 0 0 1em 0;
+      margin: 0 0 1rem 0;
       padding: 0;
     }
   }
@@ -100,8 +100,8 @@ kbd, code {
 
 kbd {
   border: 1px solid var(--medium);
-  padding: 0.25em;
-  border-radius: 0.25em;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
 }
 
 hr {
@@ -113,7 +113,7 @@ header h2 {
 }
 
 .post {
-  margin-bottom: 8em;
+  margin-bottom: 8rem;
 
   > header h2 {
     font-weight: bold;
@@ -131,7 +131,7 @@ header h2 {
 .footnote-reference {
   vertical-align: top;
   > a {
-    padding: 0 0.2em;
+    padding: 0 0.2rem;
   }
 }
 
@@ -141,10 +141,10 @@ header h2 {
 
 .footnote-definition-label {
   vertical-align: baseline;
-  font-size: medium;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-end: 0.5em;
+  font-size: 1rem;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-inline-end: 0.5rem;
   &::after {
     content: ". ";
   }
@@ -155,14 +155,14 @@ header h2 {
 .grid-list-wrapper > ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 2em;
+  grid-gap: 2rem;
 
   list-style-type: none;
   margin: 0;
   padding: 0;
 
   > li {
-    padding: 1.5em;
+    padding: 1.5rem;
     border: 2px solid var(--light);
 
     h3 {
