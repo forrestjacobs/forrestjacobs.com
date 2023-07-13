@@ -10,17 +10,17 @@
 </head>
 
 <body>
-<section id="main-container">
-
-<div id="masthead">
-<h1 id="title"><a href="{{ get_url(path='@/_index.md') }}">Forrest Jacobs</a></h1>
+<header>
+<h1><a href="{{ get_url(path='@/_index.md') }}">Forrest Jacobs</a></h1>
 <nav><ul>
   <li><a href="{{ get_url(path='@/_index.md') }}">Blog</a></li>
   <li><a href="{{ get_url(path='@/pages/projects.md') }}">Projects</a></li>
 </ul></nav>
-</div>
+</header>
 
+<main>
 {% block content %}{% endblock %}
+</main>
 
 <footer>
 <ul>
@@ -30,7 +30,5 @@
 </ul>
 <a href="https://github.com/forrestjacobs/forrestjacobs.com/blob/main/LICENSE.txt">Copyright 2023 Forrest Jacobs</a>
 </footer>
-
-</section>
 </body>
 </html>

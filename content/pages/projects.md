@@ -3,26 +3,18 @@ title = "Projects"
 path = "projects"
 +++
 
-<ul class="project-list">
-<li>
+<div class="grid-list-wrapper">
 
-### [Starfield](https://starfield.forrestjacobs.com/)
+* ### [Starfield](https://starfield.forrestjacobs.com/)
 
-A celestial animation
+  A celestial animation
 
-</li>
-<li>
+* ### [systemctl-bot](https://github.com/forrestjacobs/systemctl-bot)
 
-### [systemctl-bot](https://github.com/forrestjacobs/systemctl-bot)
+  Control a subset of systemd units from Discord.
 
-Control a subset of systemd units from Discord.
+* ### [Roll 'Em](https://rollem.co/)
 
-</li>
-<li>
+  Roll 3D dice.
 
-### [Roll 'Em](https://rollem.co/)
-
-Roll 3D dice.
-
-</li>
-</ul>
+</div>

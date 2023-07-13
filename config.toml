@@ -8,6 +8,8 @@ description = "Forrest Jacobs’s personal blog"
 generate_feed = true
 feed_filename = "rss.xml"
 
+compile_sass = true
+
 [markdown]
 highlight_code = true
 highlight_theme = "gruvbox-dark"
