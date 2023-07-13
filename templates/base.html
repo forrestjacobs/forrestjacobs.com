@@ -3,15 +3,16 @@
 
 <head>
 <meta charset="utf-8">
-<title>{% block title %}Forrest Jacobs{% endblock title %}</title>
+<title>{% block title -%}{{ config.title }}{% endblock title %}</title>
 <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{{ config.description }}">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') }}">
 </head>
 
 <body>
 <header>
-<h1><a href="{{ get_url(path='@/_index.md') }}">Forrest Jacobs</a></h1>
+<h1><a href="{{ get_url(path='@/_index.md') }}">{{ config.title }}</a></h1>
 <nav><ul>
   <li><a href="{{ get_url(path='@/_index.md') }}">Blog</a></li>
   <li><a href="{{ get_url(path='@/pages/projects.md') }}">Projects</a></li>
