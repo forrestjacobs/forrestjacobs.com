@@ -1,13 +1,8 @@
+{% import "macros.html" as macros %}
 {% extends "base.html" %}
 
 {% block title %}{{ page.title }} – Forrest Jacobs{% endblock title %}
 
 {% block content %}
-<article{% if page.date %} class="post"{% endif %}>
-<header>
-<h2>{{ page.title }}</h2>
-{% if page.date %}<div class="post-date">{{ page.date }}</div>{% endif %}
-</header>
-{{ page.content | safe }}
-</article>
+{{ macros::page_content(page=page) }}
 {% endblock content %}
