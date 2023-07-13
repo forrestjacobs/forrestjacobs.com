@@ -94,8 +94,10 @@ pre {
 }
 
 kbd, code {
-  /* From https://github.com/twbs/bootstrap/blob/15744ee1d04bcca03155c3bb37ee7e65a7b011c6/scss/_variables.scss#L598 */
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* From https://tailwindcss.com/docs/font-family */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  padding: 0 0.125rem;
 }
 
 kbd {
