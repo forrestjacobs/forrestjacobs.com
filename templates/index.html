@@ -2,13 +2,12 @@
 
 {% block content %}
 {% for page in section.pages %}
-  <article class="post">
-  <header>
-  <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
-  <div class="post-date">{{ page.date }}</div>
-  </header>
-  {{ page.content | safe }}
-  </article>
+<article class="post">
+<header>
+<h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+<div class="post-date">{{ page.date }}</div>
+</header>
+{{ page.content | safe }}
+</article>
 {% endfor %}
-
 {% endblock content %}

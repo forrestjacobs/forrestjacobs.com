@@ -2,40 +2,35 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}Forrest Jacobs{% endblock title %}</title>
-  <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  {% block rss %}
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
-  {% endblock %}
+<meta charset="utf-8">
+<title>{% block title %}Forrest Jacobs{% endblock title %}</title>
+<link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') }}">
 </head>
 
 <body>
-  <section id="main-container">
-    <div id="masthead">
-      <h1 id="title">
-        <a href="{{ get_url(path='@/_index.md') }}">Forrest Jacobs</a>
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="{{ get_url(path='@/_index.md') }}">Blog</a></li>
-          <li><a href="{{ get_url(path='@/pages/projects.md') }}">Projects</a></li>
-        </ul>
-      </nav>
-    </div>
+<section id="main-container">
 
-    {% block content %}{% endblock %}
+<div id="masthead">
+<h1 id="title"><a href="{{ get_url(path='@/_index.md') }}">Forrest Jacobs</a></h1>
+<nav><ul>
+  <li><a href="{{ get_url(path='@/_index.md') }}">Blog</a></li>
+  <li><a href="{{ get_url(path='@/pages/projects.md') }}">Projects</a></li>
+</ul></nav>
+</div>
 
-    <footer>
-      <ul>
-        <li><a rel="me" href="https://hachyderm.io/@forrestjacobs">Mastodon</a></li>
-        <li><a rel="me" href="https://github.com/forrestjacobs">GitHub</a></li>
-        <li><a href="{{ get_url(path='rss.xml', trailing_slash=false) }}">RSS</a></li>
-      </ul>
-      <a href="https://github.com/forrestjacobs/forrestjacobs.com/blob/main/LICENSE.txt">Copyright 2023 Forrest Jacobs</a>
-    </footer>
-  </section>
+{% block content %}{% endblock %}
+
+<footer>
+<ul>
+  <li><a rel="me" href="https://hachyderm.io/@forrestjacobs">Mastodon</a></li>
+  <li><a rel="me" href="https://github.com/forrestjacobs">GitHub</a></li>
+  <li><a href="{{ get_url(path='rss.xml') }}">RSS</a></li>
+</ul>
+<a href="https://github.com/forrestjacobs/forrestjacobs.com/blob/main/LICENSE.txt">Copyright 2023 Forrest Jacobs</a>
+</footer>
+
+</section>
 </body>
-
 </html>
