@@ -130,26 +130,12 @@ header h2 {
   color: var(--dark);
 }
 
-.footnote-reference {
-  vertical-align: top;
-  > a {
-    padding: 0 0.2rem;
-  }
+.footnotes {
+  padding-left: 2rem;
 }
 
-.footnote-definition {
-  display: flex;
-}
-
-.footnote-definition-label {
-  vertical-align: baseline;
-  font-size: 1rem;
-  margin-block-start: 1rem;
-  margin-block-end: 1rem;
-  margin-inline-end: 0.5rem;
-  &::after {
-    content: ". ";
-  }
+.footnotes > li {
+  padding-left: 0.5rem;
 }
 
 /* Projects page */
