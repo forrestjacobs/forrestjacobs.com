@@ -4,18 +4,6 @@
 <h2>{% if link %}<a href="{{ page.permalink | safe }}">{% endif %}{{ page.title }}{% if link %}</a>{% endif %}</h2>
 {% if page.date %}<div class="post-date">{{ page.date }}</div>{% endif %}
 </header>
-{{ page.content
-  | replace(from='<footnotes>
-<div class="footnote-definition"', to='<ol class="footnotes">
-<li')
-  | replace(from='</div>
-<div class="footnote-definition"', to='</li>
-<li')
-  | replace(from='</div>
-</footnotes>', to='</li>
-</ol>')
-  | replace(from='<sup class="footnote-definition-label">', to="<!--")
-  | replace(from='</sup>', to="-->")
-  | safe }}
+{{ page.content | safe }}
 </article>
 {% endmacro input %}

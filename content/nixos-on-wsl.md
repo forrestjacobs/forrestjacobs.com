@@ -165,8 +165,6 @@ whether the issue appears or not.
 
 * * *
 
-<footnotes>
-
 [^wsl-brick]: I _think_ I changed the default user without actually setting up that user? Or I switched to native
 _systemd_ before upgrading to a version of NixOS on WSL that supports it?
 
@@ -176,5 +174,3 @@ with the necessary options.
 
 [^fish-path-missing]: Thanks to [this GitHub issue](https://github.com/nix-community/NixOS-WSL/issues/192) for alerting
 me to the problem.
-
-</footnotes>
