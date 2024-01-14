@@ -1,24 +1,24 @@
 :root {
   --white: #fff;
-  --lightest: #ddd;
-  --light: #bbb;
-  --medium: #999;
-  --dark: #666;
-  --darkest: #111;
+  --lightest: #D0D4BB;
+  --light: #A5B49B;
+  --medium: #7A947B;
+  --dark: #4B5F5B;
+  --darkest: #1C293B;
   --black: #000;
-  --brand: #164;
+  --brand: #0F7554;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --white: #000;
-    --lightest: #222;
-    --light: #444;
-    --medium: #999;
-    --dark: #ccc;
-    --darkest: #eee;
+    --lightest: #1C293B;
+    --light: #4B5F5B;
+    --medium: #7A947B;
+    --dark: #A5B49B;
+    --darkest: #D0D4BB;
     --black: #fff;
-    --brand: #2db;
+    --brand: #E09E3F;
   }
 }
 
