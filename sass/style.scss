@@ -34,13 +34,12 @@ body {
 
   > header {
     padding: 1rem 0;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     row-gap: 1rem;
     column-gap: 4rem;
-    border-bottom: 2px solid var(--light);
   
     > h1 {
       font-size: 1.25rem;
@@ -123,6 +122,10 @@ header h2 {
     > a {
       color: var(--darkest);
     }
+  }
+
+  hr {
+    margin: 2rem 0;
   }
 }
 
