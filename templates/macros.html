@@ -1,9 +1,0 @@
-{% macro page_content(page, link=false) %}
-<article{% if page.date %} class="post"{% endif %}>
-<header>
-<h2>{% if link %}<a href="{{ page.permalink | safe }}">{% endif %}{{ page.title }}{% if link %}</a>{% endif %}</h2>
-{% if page.date %}<div class="post-date">{{ page.date }}</div>{% endif %}
-</header>
-{{ page.content | safe }}
-</article>
-{% endmacro input %}

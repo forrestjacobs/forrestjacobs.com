@@ -1,8 +1,0 @@
-{% import "macros.html" as macros %}
-{% extends "base.html" %}
-
-{% block content %}
-{% for page in section.pages %}
-{{ macros::page_content(page=page, link=true) }}
-{% endfor %}
-{% endblock content %}

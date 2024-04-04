@@ -1,0 +1,36 @@
+baseURL = 'https://forrestjacobs.com/'
+languageCode = 'en-us'
+title = 'Forrest Jacobs'
+disableKinds = ["taxonomy", "term"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
+[outputs]
+home = ['html', 'rss']
+section = ['html']
+
+[outputFormats.RSS]
+baseName = "rss"
+
+[permalinks]
+page.posts = '/:slug/'
+section.posts = '/archive/'
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Archive'
+pageRef = '/posts'
+weight = 20
+
+[[menus.main]]
+name = 'Projects'
+pageRef = '/projects'
+weight = 30
