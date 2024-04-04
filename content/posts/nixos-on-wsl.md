@@ -124,7 +124,7 @@ flakes, updating to NixOS 22.11, and enabling native _systemd_:
 
 ### Addendum: Share `.ssh` directory with Windows
 
-It turns out that [file permissions set in WSL are preserved in NTFS][^fs-perm-wsl-ntfs]. You can store your SSH
+It turns out that [file permissions set in WSL are preserved in NTFS][][^fs-perm-wsl-ntfs]. You can store your SSH
 configuration files in Windows, and still use them from WSL with no permissions issues:
 
 - Set up your `~/.ssh` in NixOS like normal.
@@ -139,7 +139,7 @@ That's it! You can verify that permissions carried over with `ls -al ~/.ssh/`
 
 I use [_fish_] as my shell, but when I set it up in WSL I started getting errors like this:
 
-```
+```text
 fish: Unknown command: ls
 /nix/store/lkf5vmavnxa0s37imb03gv7hs6dh5pll-fish-3.5.1/share/fish/functions/ls.fish (line 64):
     command $__fish_ls_command $__fish_ls_color_opt $opt $argv
@@ -150,8 +150,10 @@ in function 'ls'
 Uh oh. Obviously, there are important directories missing from my path. It turns out that I was missing some
 configuration[^fish-path-missing]:
 
-```
-programs.fish.enable = true;
+```nix
+{
+  programs.fish.enable = true;
+}
 ```
 
 I don't know why this issue only appeared in WSL, but _fish_ users should probably set `programs.fish.enable` in NixOS
@@ -163,7 +165,7 @@ whether the issue appears or not.
 
 - [Nix Flakes on WSL](https://xeiaso.net/blog/nix-flakes-4-wsl-2022-05-01) by [Xe Iaso](https://xeiaso.net/)
 
-* * *
+
 
 [^wsl-brick]: I _think_ I changed the default user without actually setting up that user? Or I switched to native
 _systemd_ before upgrading to a version of NixOS on WSL that supports it?

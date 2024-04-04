@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h2>Archive</h2>
+<ol id="archive-list">
+{{ range .Pages }}
+<li>
+{{- $date := .Date | time.Format "2006-01-02" }}
+<time datetime="{{ $date }}">{{ $date }}</time> - <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+</li>
+{{ end }}
+</ol>
+</section>
+{{ end }}
