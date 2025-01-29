@@ -754,7 +754,12 @@ body>header>nav>ul {
 }
 
 body>header>nav>ul>li>a {
+  color: var(--darkest);
   padding: 0.5rem 0;
+}
+
+body>header>nav>ul>li>a[aria-current="page"] {
+  color: var(--dark);
 }
 
 body>footer {
@@ -769,6 +774,10 @@ body>footer>ul {
   list-style-type: none;
   margin: 0 0 1rem 0;
   padding: 0;
+}
+
+body>footer a {
+  color: var(--darkest);
 }
 
 a {
@@ -803,7 +812,7 @@ hr {
   border: 1px solid var(--light);
 }
 
-header h2 {
+h2 {
   font-weight: normal;
 }
 
@@ -812,6 +821,8 @@ header h2 {
 }
 
 .post>header h2 {
+  font-family: inherit;
+  text-transform: none;
   font-weight: bold;
   margin-bottom: 0;
 }
@@ -822,6 +833,16 @@ header h2 {
 
 .post>header>time {
   color: var(--dark);
+}
+
+.post h2, .post h3 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.post h4 {
+  font-size: 1em;
+  margin-bottom: 0;
 }
 
 .post hr {
