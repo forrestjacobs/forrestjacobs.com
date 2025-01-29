@@ -12,7 +12,12 @@
 
 <body>
 <header>
-<h1><a href="/"{{ if .IsHome }} aria-current="page"{{ end }}>{{ site.Title }}</a></h1>
+<h1><a href="/"{{ if .IsHome }} aria-current="page"{{ end }}>
+<svg width="217" height="15" xmlns="http://www.w3.org/2000/svg" aria-labelledby="site-title" role="img">
+<title id="site-title">{{ site.Title }}</title>
+<use href="/logo.svg#main" />
+</svg>
+</a></h1>
 <nav><ul>
 {{- range site.Menus.main }}
   <li><a href="{{ .URL }}"{{ if $.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
