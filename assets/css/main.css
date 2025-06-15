@@ -367,6 +367,10 @@
     --brand: #e09e3f;
   }
 
+  .mermaid {
+    filter: invert();
+  }
+
   /* Background */
   .bg {
     color: #ebdbb2;
@@ -814,10 +818,6 @@ hr {
 
 h2 {
   font-weight: normal;
-}
-
-.mermaid {
-  background: #ebebe0;
 }
 
 .post {
