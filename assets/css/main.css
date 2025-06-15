@@ -367,7 +367,7 @@
     --brand: #e09e3f;
   }
 
-  .mermaid {
+  .mermaid>svg {
     filter: invert();
   }
 
