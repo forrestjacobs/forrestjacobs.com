@@ -1,0 +1,64 @@
++++
+title = "Rust to Go and back"
+date = 2025-05-19 13:11:00
++++
+
+I wrote two Discord bots relatively recently: [a bot called `systemctl-bot` that lets you start and stop systemd units](https://github.com/forrestjacobs/systemctl-bot), and [a bot called `pipe-bot` that posts piped messages](https://github.com/forrestjacobs/pipe-bot). I attempted to write both in Rust, and while one was a delight to write, the other I ended up rewriting in Go in a fit of frustration. Here are a few reasons why:
+
+### Starting off too complex
+
+`pipe-bot`, the program I successfully wrote in Rust, is very simple — it listens to standard in, then calls to the Discord API based on the message:
+
+```mermaid
+graph
+  
+  start(Start Discord client) --> stdin
+  
+  subgraph Loop
+    stdin@{ shape: lean-r, label: "Wait for stdin" }
+  
+	  stdin --> parse[Parse stdin]
+	  parse -->|Message| message[Send message]
+	  parse -->|Status update| status[Update status]
+	  parse -->|Else| log[Log error]
+	end
+```
+
+However, I started with `systemctl-bot`, which monitors and controls systemd units, parses and shares a config file, reads async streams, and generally has weird edge cases. While it’s not *overly* complex, it’s a lot to get your head around when you’re also learning the borrower checker and async Rust.
+
+```mermaid
+graph
+  config(Parse config) --> start(Start Discord client) --> register(Register commands)
+  register --> command
+  start --> status
+  allowed -.- config
+
+  subgraph Command Loop
+    command@{ shape: lean-r, label: "Command" } --> allowed{Is unit in config?}
+	  allowed --> |Not in config| log[Log error]
+	  allowed --> |In config| systemctl[Issue systemctl command]
+	  systemctl --> |Success| post[Send success message]
+	  systemctl --> |Failed| fail[Send failure message]
+  end
+
+  subgraph Status Loop
+    status@{ shape: lean-r, label: "Unit Status Update" }
+	  status --> fus[Fetch units' statuses] --> uds[Update Discord status]
+  end
+```
+
+### Async Rust
+
+I anticipated fighting with the borrower checker, but—oh boy!—it pales in comparison to writing and understanding async Rust. Since I was coming from the world of “””enterprise software”””, I was used to writing with a level of indirection to facilitate code reuse, unit testing, and refactoring. However, Rust makes you pay for indirection that involves tracking more state or more complex state since it has to track that state while the async call is in progress. Watch this video to hear [someone much smarter than me](https://fasterthanli.me/) explain why the current state of async Rust ain’t quite it yet:
+
+{{< youtube bnmln9HtqEI >}}
+
+### Testing
+
+Something possessed me to go full enterprise software sicko mode during the development of `systemctl-bot` and unit test every module to as close to 100% coverage as possible. I’m glad I did because it taught me more about generics and about Box, Rc, and Arc as I tried to find ways to mock dependencies, but it also taught me that this style of testing in Rust produces a huge glob of code that is painful to wrangle.
+
+I decided to take a different approach while developing `pipe-bot`: I just mocked the outer edges of my program and let every test be an integration test. Any unit-level errors that mattered seem to come up in these tests, and since my program was small it wasn’t difficult to identify the specific function where the error originated. I got 99% of the benefit of unit testing with 20% of the effort.
+
+### Final thoughts
+
+I enjoy Rust, but I respect Go. Rust is more fun to write, and the compiler’s strict checking is a superpower that ensures you don’t screw yourself up too badly. However, async Rust is a huge pain for me, and while Go is boring, sometimes it’s the ticket to complete a project.

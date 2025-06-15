@@ -21,6 +21,9 @@ baseName = "rss"
 page.posts = '/:slug/'
 section.posts = '/archive/'
 
+[privacy.youTube]
+privacyEnhanced = true
+
 [[menus.main]]
 name = 'Home'
 pageRef = '/'

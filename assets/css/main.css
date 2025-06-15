@@ -816,6 +816,10 @@ h2 {
   font-weight: normal;
 }
 
+.mermaid {
+  background: #ebebe0;
+}
+
 .post {
   margin-bottom: 8rem;
 }
