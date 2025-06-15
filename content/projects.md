@@ -1,6 +1,5 @@
 +++
 title = "Projects"
-path = "projects"
 +++
 
 <div class="grid-list-wrapper">
