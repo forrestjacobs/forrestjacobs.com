@@ -1,6 +1,6 @@
 +++
 title = "NixOS on WSL"
-date = 2023-01-22
+date = 2023-01-22 12:00:00
 +++
 
 I recently set up a new Windows machine for gaming, but I'm actually using it more to play around with Linux via [WSL].

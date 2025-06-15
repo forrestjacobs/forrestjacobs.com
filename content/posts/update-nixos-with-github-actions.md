@@ -1,6 +1,6 @@
 +++
 title = "Keeping NixOS systems up to date with GitHub Actions"
-date = 2024-09-03
+date = 2024-09-03 12:00:00
 +++
 
 Keeping my NixOS servers up to date was dead simple before I switched to flakes -- I enabled

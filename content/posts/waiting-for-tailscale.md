@@ -1,6 +1,6 @@
 +++
 title = "Waiting on Tailscale"
-date = 2024-08-27
+date = 2024-08-27 12:00:00
 +++
 
 I restarted my server the other day, and I realized one of my systemd services failed to start on boot because the
