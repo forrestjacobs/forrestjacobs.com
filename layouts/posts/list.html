@@ -4,7 +4,8 @@
 {{ range .Pages }}
 <li>
 {{- $date := .Date | time.Format "2006-01-02" }}
-<time datetime="{{ $date }}">{{ $date }}</time> - <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+<time datetime="{{ $date }}">{{ $date }}</time>
+<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
 </li>
 {{ end }}
 </ol>

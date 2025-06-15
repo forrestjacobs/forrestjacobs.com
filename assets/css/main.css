@@ -870,6 +870,7 @@ sup {
 #archive-list>li>time {
   font-variant-numeric: tabular-nums;
   color: var(--dark);
+  margin-right: 1rem;
 }
 
 .grid-list-wrapper>ul {
