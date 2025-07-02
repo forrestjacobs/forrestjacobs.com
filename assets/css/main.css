@@ -367,10 +367,6 @@
     --brand: #e09e3f;
   }
 
-  .mermaid>svg {
-    filter: invert();
-  }
-
   /* Background */
   .bg {
     color: #ebdbb2;

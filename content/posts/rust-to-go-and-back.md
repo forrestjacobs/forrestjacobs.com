@@ -9,42 +9,76 @@ I wrote two Discord bots relatively recently: [a bot called `systemctl-bot` that
 
 `pipe-bot`, the program I successfully wrote in Rust, is very simple — it listens to standard in, then calls to the Discord API based on the message:
 
-```mermaid
-graph
-  
-  start(Start Discord client) --> stdin
-  
-  subgraph Loop
-    stdin@{ shape: lean-r, label: "Wait for stdin" }
-  
-	  stdin --> parse[Parse stdin]
-	  parse -->|Message| message[Send message]
-	  parse -->|Status update| status[Update status]
-	  parse -->|Else| log[Log error]
-	end
+
+```goat
+
+                        .----------------------.
+                       |  Start Discord client  |
+                        '----------+-----------'
+                                   |
+.-- loop --------------------------|----------------------------------.
+|                                  v                                  |
+|                         .------------------.                        |
+|                        /  Wait for stdin  /                         |
+|                       '----------+-------'                          |
+|                                  |                                  |
+|                                  v                                  |
+|                         .---------------.                           |
+|                   .-----+  Parse stdin  +-----.                     |
+|                  /      '--------+------'      \                    |
+|                 /                |              \                   |
+|            Message        Status update        Else                 |
+|               /                  |                \                 |
+|              v                   v                 v                |
+|  .----------------.    .-----------------.    .-------------.       |
+|  |  Send Message  |    |  Update status  |    |  Log Error  |       |
+|  '----------------'    '-----------------'    '-------------'       |
+|                                                                     |
+'---------------------------------------------------------------------'
 ```
 
 However, I started with `systemctl-bot`, which monitors and controls systemd units, parses and shares a config file, reads async streams, and generally has weird edge cases. While it’s not *overly* complex, it’s a lot to get your head around when you’re also learning the borrower checker and async Rust.
 
-```mermaid
-graph
-  config(Parse config) --> start(Start Discord client) --> register(Register commands)
-  register --> command
-  start --> status
-  allowed -.- config
-
-  subgraph Command Loop
-    command@{ shape: lean-r, label: "Command" } --> allowed{Is unit in config?}
-	  allowed --> |Not in config| log[Log error]
-	  allowed --> |In config| systemctl[Issue systemctl command]
-	  systemctl --> |Success| post[Send success message]
-	  systemctl --> |Failed| fail[Send failure message]
-  end
-
-  subgraph Status Loop
-    status@{ shape: lean-r, label: "Unit Status Update" }
-	  status --> fus[Fetch units' statuses] --> uds[Update Discord status]
-  end
+```goat
+                                .--------------.
+                               |  Parse config  |
+                                '-------+------'
+                                        |
+                                        v
+                            .----------------------.
+                   .-------+  Start Discord client  |
+                  |         '-----------+----------'
+                  |                     |
+                  |                     v
+                  |           .-------------------.
+                  |          |  Register commands  +-.
+                  |           '-------------------'   |
+                  |                                   |
+.-- Status loop --|-------------.  .-- Command loop --|--------------------.
+|                 v             |  |                  v                    |
+|    .----------------------.   |  |             .-----------.             |
+|   /  Unit status update  /    |  |            /  Command  /              |
+|  '--------------+-------'     |  |           '-----------'               |
+|                 |             |  |                  |                    |
+|                 v             |  |                  v                    |
+|  .-------------------------.  |  |        .------------------.           |
+|  |  Fetch units' statuses  |  |  |       /                    \          |
+|  '--------------+----------'  |  |      +  Is unit in config?  +         |
+|                 |             |  |       \                    /          |
+|                 v             |  |        '--+------------+--'           |
+|  .-------------------------.  |  |          /              \             |
+|  |  Update Discord status  |  |  |         No              Yes           |
+|  '-------------------------'  |  |        /                  \           |
+|                               |  |       v                    v          |
+'-------------------------------'  | .-------------.  .------------------. |
+                                   | |  Log error  |  |  Call systemctl  | |
+                                   | '-------------'  '--------+---------' |
+                                   |                           |           |
+                                   |                           v           |
+                                   |                   .----------------.  |
+                                   |                   |  Post results  |  |
+                                   |                   '----------------'  |
+                                   '---------------------------------------'
 ```
 
 ### Async Rust
