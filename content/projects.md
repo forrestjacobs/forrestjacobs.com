@@ -1,6 +1,7 @@
 +++
 title = "Projects"
 lastmod = 2023-07-10 20:23:00
+description = "Forrest Jacobs’s personal projects, including websites and apps."
 +++
 
 <div class="grid-list-wrapper">

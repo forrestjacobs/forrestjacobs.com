@@ -18,6 +18,9 @@ section = ['html']
 [outputFormats.RSS]
 baseName = "rss"
 
+[params]
+description = "Forrest Jacobs’s personal technical blog."
+
 [permalinks]
 page.posts = '/:slug/'
 section.posts = '/archive/'

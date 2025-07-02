@@ -6,8 +6,12 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s – %s" .Title site.Title }}{{ end }}</title>
 {{- partialCached "css.html" . -}}
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Forrest Jacobs’s personal blog">
+{{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+<meta name="description" content="{{ trim . "\n\r\t " }}">
+{{- end }}
+
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+{{ partial "opengraph.html" . }}
 </head>
 
 <body>
