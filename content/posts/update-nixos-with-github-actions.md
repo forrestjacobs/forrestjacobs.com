@@ -18,7 +18,7 @@ and that makes it easier to reason about what is installed on each server.
 
 Below is one method of updating the shared lock file before updating each server:
 
-## Updating flake.lock with GitHub Actions
+### Updating flake.lock with GitHub Actions
 
 The [_update-flake-lock_ GitHub Action][action] updates your project's flake lock file on a schedule. It essentially runs
 `nix flake update --commit-lock-file` and then opens a pull request. Add it to your NixOS config repository like this:
@@ -52,7 +52,7 @@ Add this step if you want to automatically merge the pull request:
         if: ${{ steps.update.outputs.pull-request-number != '' }}
 ```
 
-## Pulling changes & rebuilding
+### Pulling changes & rebuilding
 
 Next, it's time to configure NixOS to pull changes and rebuild. The configuration below adds two _systemd_ services:
 
