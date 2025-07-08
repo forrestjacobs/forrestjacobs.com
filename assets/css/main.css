@@ -722,6 +722,11 @@ body {
   max-width: 43.5rem;
 }
 
+::selection {
+  color: var(--lightest);
+  background-color: var(--brand);
+}
+
 body>header {
   margin-bottom: 6rem;
   display: flex;
