@@ -853,6 +853,11 @@ code {
   padding: 0.125rem;
 }
 
+a code {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 pre > code {
   outline: 0;
   padding: 0;
