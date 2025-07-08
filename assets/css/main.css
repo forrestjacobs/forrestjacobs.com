@@ -1,5 +1,5 @@
 :root {
-  --lightest: #D5DDCD; /* background */
+  --lightest: #E6EAE1; /* background */
   --light: #9BAD8C; /* line */
   --dark: #3F425F; /* light words */
   --darkest: #141524; /* words */
@@ -361,7 +361,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --lightest: #203A38;
-    --light: #3E5E5E;
+    --light: #517B7B;
     --dark: #D3D0A6;
     --darkest: #DEDDCE;
     --brand: #ADCF91;
@@ -764,7 +764,6 @@ body>header>nav>ul {
 
 body>header>nav>ul>li>a {
   color: var(--darkest);
-  text-decoration-color: var(--light);
   padding: 0.5rem 0;
 }
 
@@ -788,7 +787,6 @@ body>footer>ul {
 
 body>footer a {
   color: var(--darkest);
-  text-decoration-color: var(--light);
 }
 
 h2, h3 {
@@ -823,6 +821,7 @@ ul, ol {
 a {
   color: var(--brand);
   text-decoration-thickness: 2px;
+  text-decoration-color: var(--light);
 }
 
 a:hover {
@@ -884,7 +883,6 @@ article>header h2 {
 
 article>header h2>a {
   color: var(--darkest);
-  text-decoration-color: var(--light);
 }
 
 article>header>time {
