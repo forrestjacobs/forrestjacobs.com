@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ range where .Site.RegularPages "Type" "posts" | first 3 }}
-<article class="post">
+<article>
 <header>
 <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 {{- $date := .Date | time.Format "2006-01-02" }}

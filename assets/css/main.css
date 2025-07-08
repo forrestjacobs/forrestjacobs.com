@@ -759,6 +759,7 @@ body>header>nav>ul {
 
 body>header>nav>ul>li>a {
   color: var(--darkest);
+  text-decoration-color: var(--light);
   padding: 0.5rem 0;
 }
 
@@ -782,12 +783,18 @@ body>footer>ul {
 
 body>footer a {
   color: var(--darkest);
+  text-decoration-color: var(--light);
 }
 
 h2, h3 {
   font-family: NationalPark;
   font-weight: 500;
   margin: 1.5rem 0;
+}
+
+h3 {
+  position: relative;
+  top: 0.75rem;
 }
 
 h3, h4 {
@@ -810,11 +817,11 @@ ul, ol {
 
 a {
   color: var(--brand);
-  text-decoration-color: var(--light);
+  text-decoration-thickness: 2px;
 }
 
 a:hover {
-  text-decoration-color: var(--hover);
+  text-decoration-color: var(--brand);
 }
 
 pre {
@@ -858,23 +865,24 @@ hr {
   margin: 2.9375rem 0;
 }
 
-.post {
+article {
   margin-bottom: 6rem;
 }
 
-.post>header {
+article>header {
   margin-bottom: 1.5rem;
 }
 
-.post>header h2 {
+article>header h2 {
   margin-bottom: 0.75rem;
 }
 
-.post>header h2>a {
+article>header h2>a {
   color: var(--darkest);
+  text-decoration-color: var(--light);
 }
 
-.post>header>time {
+article>header>time {
   display: block;
   color: var(--dark);
   line-height: 0.75rem;
