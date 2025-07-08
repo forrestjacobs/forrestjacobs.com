@@ -1,12 +1,15 @@
 :root {
-  --white: #fff;
-  --lightest: #ebebe0;
-  --light: #a5b49b;
-  --medium: #7a947b;
-  --dark: #4b5f5b;
-  --darkest: #1c293b;
-  --black: #000;
-  --brand: #0f7554;
+  --lightest: #D5DDCD; /* background */
+  --light: #9BAD8C; /* line */
+  --dark: #3F425F; /* light words */
+  --darkest: #141524; /* words */
+  --brand: #0F7554;
+}
+
+@font-face {
+  font-family: NationalPark;
+  src: url("/fonts/NationalPark-VariableVF.woff2") format("woff2");
+  font-weight: 200 800;
 }
 
 @media (prefers-color-scheme: light) {
@@ -357,14 +360,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --white: #000;
-    --lightest: #1c293b;
-    --light: #4b5f5b;
-    --medium: #7a947b;
-    --dark: #a5b49b;
-    --darkest: #d0d4bb;
-    --black: #fff;
-    --brand: #e09e3f;
+    --lightest: #203A38;
+    --light: #3E5E5E;
+    --dark: #D3D0A6;
+    --darkest: #DEDDCE;
+    --brand: #ADCF91;
   }
 
   /* Background */
@@ -733,13 +733,16 @@ body>header {
 }
 
 body>header>h1 {
-  font-size: 1.25rem;
-  font-weight: normal;
+  font-family: NationalPark;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
   margin: 0;
 }
 
 body>header>h1>a {
-  color: var(--darkest);
+  color: var(--brand);
   text-decoration: none;
 }
 
@@ -780,13 +783,18 @@ body>footer a {
   color: var(--darkest);
 }
 
+h2, h3, h4 {
+  font-family: NationalPark;
+  font-weight: 500;
+}
+
 a {
   color: var(--brand);
-  text-decoration-color: var(--medium);
+  text-decoration-color: var(--light);
 }
 
 a:hover {
-  text-decoration-color: var(--dark);
+  text-decoration-color: var(--hover);
 }
 
 pre {
@@ -795,15 +803,20 @@ pre {
 }
 
 kbd,
-code {
+code,
+.goat>svg {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   font-size: 0.875rem;
+}
+
+kbd,
+code {
   padding: 0 0.125rem;
 }
 
 kbd {
-  border: 1px solid var(--medium);
+  border: 1px solid var(--light);
   padding: 0.25rem;
   border-radius: 0.25rem;
 }
@@ -812,19 +825,8 @@ hr {
   border: 1px solid var(--light);
 }
 
-h2 {
-  font-weight: normal;
-}
-
 .post {
   margin-bottom: 8rem;
-}
-
-.post>header h2 {
-  font-family: inherit;
-  text-transform: none;
-  font-weight: bold;
-  margin-bottom: 0;
 }
 
 .post>header h2>a {
