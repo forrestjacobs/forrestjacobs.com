@@ -717,7 +717,7 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     "Noto Sans", "Liberation Sans", Arial, sans-serif;
   line-height: 1.5rem;
-  padding: 3rem;
+  padding: 1.5rem 0.75rem;
   margin: 0 auto;
   max-width: 43.5rem;
 }
@@ -727,7 +727,7 @@ body>header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  row-gap: 1.5rem;
+  row-gap: 3rem;
   column-gap: 6rem;
 }
 
@@ -741,7 +741,9 @@ body>header>h1 {
 }
 
 body>header>h1>a {
-  color: var(--brand);
+  background-color: var(--brand);
+  color: var(--lightest);
+  padding: 1.5rem;
   text-decoration: none;
 }
 
