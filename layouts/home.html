@@ -5,6 +5,7 @@
 <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 {{- $date := .Date | time.Format "2006-01-02" }}
 <time datetime="{{ $date }}">{{ $date }}</time>
+</header>
 {{ .Content }}
 </article>
 {{ end }}
