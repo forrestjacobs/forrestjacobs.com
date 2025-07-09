@@ -85,7 +85,7 @@ However, I started with `systemctl-bot`, which monitors and controls systemd uni
 
 I anticipated fighting with the borrower checker, but—oh boy!—it pales in comparison to writing and understanding async Rust. Since I was coming from the world of “””enterprise software”””, I was used to writing with a level of indirection to facilitate code reuse, unit testing, and refactoring. However, Rust makes you pay for indirection that involves tracking more state or more complex state since it has to track that state while the async call is in progress. Watch this video to hear [someone much smarter than me](https://fasterthanli.me/) explain why the current state of async Rust ain’t quite it yet:
 
-{{< youtube bnmln9HtqEI >}}
+{{< youtube id=bnmln9HtqEI title="Catching up with async Rust" channel="fasterthanlime" >}}
 
 ### Testing
 
