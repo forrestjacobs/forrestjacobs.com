@@ -820,6 +820,10 @@ ul, ol, figure {
   margin: var(--base) 0;
 }
 
+ul {
+  list-style-type: square;
+}
+
 figure {
   outline: 1px dotted var(--light);
   padding: calc(var(--base) / 2);
