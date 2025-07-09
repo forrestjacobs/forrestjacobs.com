@@ -9,6 +9,7 @@ I wrote two Discord bots relatively recently: [a bot called `systemctl-bot` that
 
 `pipe-bot`, the program I successfully wrote in Rust, is very simple — it listens to standard in, then calls to the Discord API based on the message:
 
+<figure>
 
 ```goat
 
@@ -37,7 +38,14 @@ I wrote two Discord bots relatively recently: [a bot called `systemctl-bot` that
 '---------------------------------------------------------------------'
 ```
 
+<figcaption>
+A diagram showing the flow of execution for <code>pipe-bot</code>. After starting a Discord client, it waits for stdin, parses it, and then either sends a message, updates the Discord status, or logs an error based on the parsed message.
+</figcaption>
+</figure>
+
 However, I started with `systemctl-bot`, which monitors and controls systemd units, parses and shares a config file, reads async streams, and generally has weird edge cases. While it’s not *overly* complex, it’s a lot to get your head around when you’re also learning the borrower checker and async Rust.
+
+<figure>
 
 ```goat
                                 .--------------.
@@ -80,6 +88,11 @@ However, I started with `systemctl-bot`, which monitors and controls systemd uni
                                    |                   '----------------'  |
                                    '---------------------------------------'
 ```
+
+<figcaption>
+A diagram showing the more complex flow of execution for <code>systemctl-bot</code>. It parses a config file, starts a Discord client, and then branches off into two threads: one handling status updates, and the other handling commands (after registering them with the Discord client.) The status thread waits for unit status updates, then fetches all units' statuses and updates Discord. The command loop waits for a user command, calls <code>systemctl</code> with the appropriate arguments (provided that the targeted unit is in the config file) and then posts the results. If the unit was not in the config file it logs an error instead.
+</figcaption>
+</figure>
 
 ### Async Rust
 
