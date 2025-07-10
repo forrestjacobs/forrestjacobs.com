@@ -6,6 +6,7 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s – %s" .Title site.Title }}{{ end }}</title>
 {{- partialCached "css.html" . -}}
 <link rel="preload" href="/fonts/NationalPark-VariableVF.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+{{- partialCached "favicon.html" . -}}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 {{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
 <meta name="description" content="{{ trim . "\n\r\t " }}">

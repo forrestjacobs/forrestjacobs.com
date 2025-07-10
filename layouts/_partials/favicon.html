@@ -1,0 +1,9 @@
+{{- with resources.Get "images/favicon.svg" }}
+  {{- if eq hugo.Environment "development" }}
+<link rel="icon" href="{{ .RelPermalink }}" sizes="any" type="image/svg+xml">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+<link rel="icon" href="{{ .RelPermalink }}" sizes="any" type="image/svg+xml" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
