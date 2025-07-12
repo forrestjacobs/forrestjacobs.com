@@ -716,8 +716,7 @@
 body {
   background: var(--lightest);
   color: var(--darkest);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  font-family: system-ui, sans-serif;
   line-height: var(--base);
   padding: var(--base) calc(var(--base) / 2);
   margin: 0 auto;
