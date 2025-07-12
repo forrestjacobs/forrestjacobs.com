@@ -1,10 +1,13 @@
 :root {
   --base: 1.625rem;
 
-  --lightest: #E6EAE1; /* background */
-  --light: #9BAD8C; /* line */
-  --dark: #3F425F; /* light words */
-  --darkest: #141524; /* words */
+  --logo-bg: #ADCF91;
+  --logo-fg: #203A38;
+
+  --lightest: #ebf0e3; /* background */
+  --light: var(--logo-bg); /* line */
+  --dark: color-mix(in srgb, var(--darkest), var(--brand) 50%); /* light words */
+  --darkest: var(--logo-fg); /* words */
   --brand: #0F7554;
 }
 
@@ -362,11 +365,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --lightest: #203A38;
-    --light: #517B7B;
-    --dark: #D3D0A6;
+    --lightest: var(--logo-fg);
+    --light: #0F7554;
     --darkest: #DEDDCE;
-    --brand: #ADCF91;
+    --brand: var(--logo-bg);
   }
 
   /* Background */
@@ -752,8 +754,8 @@ body>header>h1 {
 }
 
 body>header>h1>a {
-  background-color: var(--brand);
-  color: var(--lightest);
+  background-color: var(--logo-bg);
+  color: var(--logo-fg);
   padding: var(--base);
   text-decoration: none;
 }
