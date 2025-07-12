@@ -961,6 +961,7 @@ sup {
 
 .youtube figure {
   padding: 0;
+  position: relative;
 }
 
 .youtube figure:after{
@@ -973,21 +974,24 @@ sup {
   text-align: center;
   align-content: center;
   font-size: 6rem;
-}
-
-.youtube figure {
-  position: relative;
+  color: var(--logo-bg);
 }
 
 .youtube figcaption {
   font-size: 1rem;
   padding: calc(var(--base) / 4) calc(var(--base) / 2);
-  position: absolute;
   margin: var(--base);
 
-  background-color: var(--brand);
-  color: var(--lightest);
+  position: absolute;
+  max-width: calc(100% - calc(var(--base) * 3));
+
+  background-color: var(--logo-bg);
+  color: var(--logo-fg);
   text-decoration: none;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .youtube .title {
