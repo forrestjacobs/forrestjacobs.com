@@ -9,10 +9,29 @@
 {{- end }}
 {{- if .IsPage }}
 <meta property="og:type" content="article">
-{{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
-{{- with .PublishDate }}
+  {{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
+  {{- with .PublishDate }}
 <meta property="article:published_time" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
-{{- end }}
+  {{- end }}
+  {{- $img :=
+    (resources.Get "images/og.png").Filter (
+      slice
+        (images.Padding 0 -150 0 0)
+        (images.Text .Page.Title (dict
+          "color" "#203a38"
+          "size" 60
+          "linespacing" 16
+          "x" 150
+          "y" 315
+          "aligny" "center"
+          "font" (resources.Get "fonts/NationalPark-Medium.ttf")
+        ))
+        (images.Padding 0 150 0 0 "#adcf91")
+    )
+  }}
+<meta property="og:image" content="{{$img.Permalink}}">
+<meta property="og:image:width" content="{{$img.Width}}" />
+<meta property="og:image:height" content="{{$img.Height}}" />
 {{- else }}
 <meta property="og:type" content="website">
 {{- end }}
