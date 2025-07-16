@@ -935,12 +935,27 @@ sup {
 
 #archive-list>li {
   margin: var(--base) 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  column-gap: var(--base);
 }
 
 #archive-list>li>time {
   font-variant-numeric: tabular-nums;
   color: var(--dark);
-  margin-right: var(--base);
+  flex: 0 0 7rem;
+}
+
+#archive-list>li>time .m {
+  display: inline-block;
+  min-width: 31px;
+}
+
+#archive-list>li>div {
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 18rem;
 }
 
 .grid-list-wrapper>ul {

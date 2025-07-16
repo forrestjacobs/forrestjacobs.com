@@ -2,8 +2,7 @@
 <article>
 <header>
 <h2>{{ .Title }}</h2>
-{{- $date := .Date | time.Format "2006-01-02" }}
-<time datetime="{{ $date }}">{{ $date }}</time>
+{{ partial "date.html" . }}
 </header>
 {{ .Content }}
 </article>

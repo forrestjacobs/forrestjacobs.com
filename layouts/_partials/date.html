@@ -1,0 +1,9 @@
+{{- $date := .Date | time.Format "2006-01-02" }}
+{{- $d := .Date | time.Format "02" }}
+{{- $m := .Date | time.Format "Jan" }}
+{{- $y := .Date | time.Format "2006" }}
+<time datetime="{{ $date }}">
+<span class="d">{{ $d }}</span>
+<span class="m">{{ $m }}</span>
+<span class="y">{{ $y }}</span>
+</time>
