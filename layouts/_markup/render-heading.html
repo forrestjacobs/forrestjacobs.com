@@ -1,0 +1,4 @@
+<h{{ .Level }} id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
+{{ .Text }}
+<a href="{{ .Page.RelPermalink }}#{{ .Anchor }}" class="header-link">#</a>
+</h{{ .Level }}>

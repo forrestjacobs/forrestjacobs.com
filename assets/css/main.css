@@ -855,6 +855,16 @@ a:hover {
   text-decoration-color: var(--brand);
 }
 
+a.header-link {
+  padding: 0 calc(var(--base) / 6);
+  color: var(--light);
+  text-decoration: none;
+}
+
+a:hover.header-link {
+  color: var(--brand);
+}
+
 pre {
   margin: var(--base) 0;
   padding: calc(var(--base) / 2);
