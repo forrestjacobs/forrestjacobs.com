@@ -855,13 +855,13 @@ a:hover {
   text-decoration-color: var(--brand);
 }
 
-a.header-link {
+a.permalink {
   padding: 0 calc(var(--base) / 6);
   color: var(--light);
   text-decoration: none;
 }
 
-a:hover.header-link {
+a:hover.permalink {
   color: var(--brand);
 }
 
