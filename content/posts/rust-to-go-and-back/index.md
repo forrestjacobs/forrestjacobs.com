@@ -11,7 +11,7 @@ I wrote two Discord bots relatively recently: [a bot called `systemctl-bot` that
 
 <figure>
 
-```goat
+```goat {label="Diagram showing the flow of execution for pipe-bot."}
 
                         .----------------------.
                        |  Start Discord client  |
@@ -47,7 +47,7 @@ However, I started with `systemctl-bot`, which monitors and controls systemd uni
 
 <figure>
 
-```goat
+```goat {label="Diagram showing the flow of execution for systemctl-bot."}
                                 .--------------.
                                |  Parse config  |
                                 '-------+------'
