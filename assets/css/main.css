@@ -4,7 +4,7 @@
   --logo-bg: #ADCF91;
   --logo-fg: #203A38;
 
-  --lightest: #ebf0e3; /* background */
+  --lightest: #fffcf6; /* background */
   --light: var(--logo-bg); /* line */
   --dark: color-mix(in srgb, var(--darkest), var(--brand) 50%); /* light words */
   --darkest: var(--logo-fg); /* words */
