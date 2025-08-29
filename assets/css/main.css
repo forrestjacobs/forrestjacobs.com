@@ -877,23 +877,11 @@ code,
 .goat>svg {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-  font-size: 0.875em;
-  vertical-align: bottom;
+  font-size: 0.9375em;
 }
 
-code {
-  outline: 1px dotted var(--light);
-  padding: 0.125rem;
-}
-
-a code {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-pre > code {
-  outline: 0;
-  padding: 0;
+:not(pre) > code {
+  line-height: 1;
 }
 
 kbd {
