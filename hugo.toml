@@ -40,7 +40,3 @@ weight = 20
 [[menus.main]]
 pageRef = '/projects'
 weight = 30
-
-[[menus.main]]
-pageRef = '/colophon'
-weight = 40
