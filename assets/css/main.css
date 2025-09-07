@@ -846,12 +846,16 @@ h4 {
   margin: var(--base) 0 0 0;
 }
 
-p {
-  margin: 0 0 var(--base) 0;
+p, ul, ol {
+  margin: 0;
 }
 
-ul, ol, figure {
-  margin: var(--base) 0;
+p + p {
+  text-indent: calc(var(--base) * 1.5);
+}
+
+ul, ol {
+  padding-left: calc(var(--base) * 1.5);
 }
 
 ul {
@@ -860,6 +864,7 @@ ul {
 
 figure {
   outline: 1px dotted var(--light);
+  margin: var(--base) 0;
   padding: calc(var(--base) / 2);
 }
 
@@ -940,6 +945,10 @@ article>header>time {
   display: block;
   color: var(--dark);
   line-height: calc(var(--base) / 2);
+}
+
+.caps {
+  font-variant: small-caps;
 }
 
 sup {

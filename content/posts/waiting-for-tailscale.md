@@ -3,8 +3,8 @@ title = "Waiting on Tailscale"
 date = 2024-08-27 12:00:00
 +++
 
-I restarted my server the other day, and I realized one of my systemd services failed to start on boot because the
-[Tailscale] IP address was not assignable:
+<span class="caps">I restarted</span> my server the other day, and I realized one of my systemd services failed to start
+on boot because the [Tailscale] IP address was not assignable:
 
 ```text
 # journalctl -u bad-bad-not-good.service
