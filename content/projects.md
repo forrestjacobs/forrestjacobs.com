@@ -6,6 +6,10 @@ description = "Forrest Jacobs’s personal projects, including websites and apps
 
 <div class="grid-list-wrapper">
 
+* ### [pipe-bot](https://github.com/forrestjacobs/pipe-bot)
+
+  Post messages and status updates to Discord from shell scripts.
+
 * ### [Starfield](https://starfield.forrestjacobs.com/)
 
   A celestial animation

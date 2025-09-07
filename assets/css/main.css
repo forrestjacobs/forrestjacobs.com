@@ -1000,8 +1000,9 @@ sup {
 }
 
 .grid-list-wrapper>ul>li {
-  padding: calc(var(--base) - 2px);
-  border: 2px solid var(--light);
+  padding: var(--base);
+  padding-bottom: calc(var(--base) * 2);
+  outline: 2px solid var(--light);
 }
 
 .grid-list-wrapper>ul>li h3 {
