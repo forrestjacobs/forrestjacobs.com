@@ -909,7 +909,8 @@ pre {
 
 kbd,
 code,
-.goat>svg {
+.goat>svg,
+time {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.9em;
 }
@@ -974,14 +975,8 @@ sup {
 }
 
 #archive-list>li>time {
-  font-variant-numeric: tabular-nums;
   color: var(--dark);
   flex: 0 0 7rem;
-}
-
-#archive-list>li>time .m {
-  display: inline-block;
-  min-width: 31px;
 }
 
 #archive-list>li>div {
