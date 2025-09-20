@@ -3,7 +3,7 @@ title = "Keeping NixOS systems up to date with GitHub Actions"
 date = 2024-09-03 12:00:00
 +++
 
-<span class="caps">Keeping my NixOS</span> servers up to date was dead simple before I switched to flakes -- I enabled
+Keeping my NixOS servers up to date was dead simple before I switched to flakes -- I enabled
 [system.autoUpgrade][auto-upgrade], and I was good to go. Trying the same with a shared flakes-based config introduced a
 few problems:
 

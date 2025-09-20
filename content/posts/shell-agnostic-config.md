@@ -3,7 +3,7 @@ title = "Shell-agnostic config"
 date = 2025-08-29 20:42:00
 +++
 
-<span class="caps">I love [fish](https://fishshell.com/)</span>, and I have built up my fish config over time:
+I love [fish](https://fishshell.com/), and I have built up my fish config over time:
 
 ```fish
 # Set helix as the editor if it's available.

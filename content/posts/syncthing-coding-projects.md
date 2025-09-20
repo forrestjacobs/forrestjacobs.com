@@ -3,7 +3,7 @@ title = "Using Syncthing to sync coding projects"
 date = 2023-05-06 12:00:00
 +++
 
-<span class="caps">I code</span> on a MacBook and a Windows PC, and I want to keep my coding projects in sync between them. Here are my wishes in decreasing priority:
+I code on a MacBook and a Windows PC, and I want to keep my coding projects in sync between them. Here are my wishes in decreasing priority:
 
  1. Code changes on my MacBook should magically update my PC, and vice versa. (Think Dropbox.)
  2. Some files should not sync, like host-specific dependencies and targets. I want to ignore these files via patterns, a la [gitignore](https://git-scm.com/docs/gitignore).

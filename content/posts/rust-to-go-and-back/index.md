@@ -3,7 +3,7 @@ title = "Rust to Go and back"
 date = 2025-05-19 13:11:00
 +++
 
-<span class="caps">I wrote two</span> Discord bots relatively recently: [a bot called `systemctl-bot` that lets you start and stop systemd units](https://github.com/forrestjacobs/systemctl-bot), and [a bot called `pipe-bot` that posts piped messages](https://github.com/forrestjacobs/pipe-bot). I attempted to write both in Rust, and while one was a delight to write, the other I ended up rewriting in Go in a fit of frustration. Here are a few reasons why:
+I wrote two Discord bots relatively recently: [a bot called `systemctl-bot` that lets you start and stop systemd units](https://github.com/forrestjacobs/systemctl-bot), and [a bot called `pipe-bot` that posts piped messages](https://github.com/forrestjacobs/pipe-bot). I attempted to write both in Rust, and while one was a delight to write, the other I ended up rewriting in Go in a fit of frustration. Here are a few reasons why:
 
 ### Starting off too complex
 

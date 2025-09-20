@@ -3,7 +3,7 @@ title = "NixOS on WSL"
 date = 2023-01-22 12:00:00
 +++
 
-<span class="caps">I recently</span> set up a new Windows machine for gaming, but I'm actually using it more to play around with Linux via [WSL].
+I recently set up a new Windows machine for gaming, but I'm actually using it more to play around with Linux via [WSL].
 I set up [NixOS] on WSL using the aptly named [NixOS on WSL] project, but ran into a few issues during setup that
 bricked my environment[^wsl-brick]. Below are the steps that ended up working for me in the end:
 
