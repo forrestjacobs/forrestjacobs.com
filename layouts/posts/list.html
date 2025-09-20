@@ -4,7 +4,7 @@
 {{ range .Pages }}
 <li>
 {{ partial "date.html" . }}
-<div><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div>
+<div><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
 </li>
 {{ end }}
 </ul>
