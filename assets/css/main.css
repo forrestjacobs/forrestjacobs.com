@@ -764,9 +764,10 @@ body {
 body>header {
   margin-bottom: calc(var(--base) * 3);
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: calc(var(--base) * 4);
+  column-gap: calc(var(--base) * 1);
 }
 
 body>header>h1 {
