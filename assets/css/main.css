@@ -978,7 +978,7 @@ sup {
 
 #archive-list>li>time {
   color: var(--dark);
-  flex: 0 0 7rem;
+  flex: 0 0 6rem;
 }
 
 #archive-list>li>div {
