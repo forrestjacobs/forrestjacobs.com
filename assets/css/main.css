@@ -912,6 +912,7 @@ code,
 .goat>svg,
 time {
   font-family: "JetBrains Mono", monospace;
+  font-variant-ligatures: none;
   font-size: 0.9em;
 }
 
