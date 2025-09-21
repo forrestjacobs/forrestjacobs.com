@@ -5,7 +5,7 @@ date = 2025-08-29 20:42:00
 
 I love [fish](https://fishshell.com/), and I have built up my fish config over time:
 
-```fish
+```fish{name="~/.config/fish/config.fish"}
 # Set helix as the editor if it's available.
 if type -q hx
   set -gx EDITOR hx
@@ -20,7 +20,7 @@ abbr S 'sudo systemctl'
 
 I’ve started working in environments where it’s infeasible to switch the shell from bash, but I still want to use my config. I *could* make a parallel `.bashrc` with the equivalent commands, but that’s bound to get out of date. Instead, I turned my fish config into a bash script that prints out the correct instructions for either bash or fish (a la [`brew shellenv [shell]`](https://docs.brew.sh/Manpage#shellenv-shell-) or [`zoxide init [shell]`](https://www.mankier.com/1/zoxide-init)). It looks like this:
 
-```bash
+```fish{name="init_shell.sh"}
 #!/usr/bin/env bash
 
 # init_shell: Prints instructions to configure the given shell.

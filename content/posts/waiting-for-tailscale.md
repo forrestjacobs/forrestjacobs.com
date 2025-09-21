@@ -6,7 +6,7 @@ date = 2024-08-27 12:00:00
 I restarted my server the other day, and I realized one of my systemd services failed to start on boot because the
 [Tailscale] IP address was not assignable:
 
-```text
+```samp
 # journalctl -u bad-bad-not-good.service
 ...
 listen tcp 100.11.22.33:8080: bind: cannot assign requested address
@@ -15,7 +15,7 @@ listen tcp 100.11.22.33:8080: bind: cannot assign requested address
 This is easy enough to fix. The service should wait to start until after Tailscale is online, so let's just add
 `tailscaled.service` to the the service's `wants` and `after` properties, reboot, and...
 
-```text
+```samp
 # journalctl -u bad-bad-not-good.service
 ...
 listen tcp 100.11.22.33:8080: bind: cannot assign requested address
@@ -28,8 +28,7 @@ address. Call it with `-i [interface name]` and either `-4` or `-6` to wait for 
 
 Wrapping it up into a service gives you something like this:
 
-```ini
-# tailscale-online.service
+```ini{name="tailscale-online.service"}
 [Unit]
 Description=Wait for Tailscale to have an IPv4 address
 Requisite=systemd-networkd.service

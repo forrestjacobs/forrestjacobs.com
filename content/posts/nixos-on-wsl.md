@@ -58,7 +58,7 @@ flakes, updating to NixOS 22.11, and enabling native _systemd_:
     - Change `wsl.defaultUser` to your desired username, and add something like
       `users.users.<your username>.isNormalUser = true;`
     - Remove references to `./nixos-wsl` since we'll set NixOS-WSL as a flake input:
-      ```diff
+      ```diff{name="/etc/nixos/configuration.nix"}
         { lib, pkgs, config, modulesPath, ... }:
       -
       - with lib;
@@ -79,7 +79,7 @@ flakes, updating to NixOS 22.11, and enabling native _systemd_:
  8. Add `/etc/nixos/flake.nix` as _root_ with contents like the following. Replace `<host-name>` with your actual host
     name from `configuration.nix`.
 
-    ```nix
+    ```nix{name="/etc/nixos/flake.nix"}
     {
 
       inputs = {
@@ -139,7 +139,7 @@ That's it! You can verify that permissions carried over with `ls -al ~/.ssh/`
 
 I use [_fish_] as my shell, but when I set it up in WSL I started getting errors like this:
 
-```text
+```samp
 fish: Unknown command: ls
 /nix/store/lkf5vmavnxa0s37imb03gv7hs6dh5pll-fish-3.5.1/share/fish/functions/ls.fish (line 64):
     command $__fish_ls_command $__fish_ls_color_opt $opt $argv
@@ -150,7 +150,7 @@ in function 'ls'
 Uh oh. Obviously, there are important directories missing from my path. It turns out that I was missing some
 configuration[^fish-path-missing]:
 
-```nix
+```nix{title="NixOS Config"}
 {
   programs.fish.enable = true;
 }

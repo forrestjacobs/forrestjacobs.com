@@ -1,3 +1,10 @@
+<figure class="codeblock">
+{{- with .Attributes.name }}
+<figcaption class="name">{{ . }}</figcaption>
+{{- end }}
+{{- with .Attributes.title }}
+<figcaption>{{ . }}</figcaption>
+{{- end }}
 {{- if transform.CanHighlight .Type }}
 <pre role="document" tabindex="0" class="chroma"><code class="language-{{ .Type }}">
 {{- with transform.HighlightCodeBlock . -}}
@@ -5,5 +12,6 @@
 {{- end -}}
 </code></pre>
 {{- else }}
-<pre role="document" tabindex="0"><code class="language-{{ .Type }}">{{ .Inner }}</code></pre>
+<pre role="document" tabindex="0"><code>{{ .Inner }}</code></pre>
 {{- end }}
+</figure>
