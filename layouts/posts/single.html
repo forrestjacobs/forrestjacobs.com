@@ -1,9 +1,11 @@
 {{ define "main" }}
-<article>
+<article itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ .Permalink }}" itemref="author">
 <header>
-<h2>{{ .Title }}</h2>
-{{ partial "date.html" . }}
+<h2 itemprop="name headline">{{ .Title }}</h2>
+{{ partial "date.html" (dict "Date" .Date "IsDatePublished" true) }}
 </header>
+<section itemprop="articleBody">
 {{ .Content }}
+</section>
 </article>
 {{ end }}

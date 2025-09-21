@@ -3,7 +3,7 @@
 <ul id="archive-list">
 {{ range .Pages }}
 <li>
-{{ partial "date.html" . }}
+{{ partial "date.html" (dict "Date" .Date) }}
 <div><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
 </li>
 {{ end }}

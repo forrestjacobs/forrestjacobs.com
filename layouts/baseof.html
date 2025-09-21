@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{{ $isPost := and .IsPage (eq .Section "posts") }}
+
 <html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 
 <head>
@@ -19,9 +21,24 @@
 
 <body>
 <header>
-<h1><a href="/"{{ if .IsHome }} aria-current="page"{{ end }}>
+<h1
+  {{ if $isPost }}
+    id="author"
+    itemprop="author"
+    itemscope
+    itemtype="https://schema.org/Person"
+  {{ end }}
+>
+<a
+  href="{{ .Site.BaseURL }}"
+  {{ if .IsHome }}aria-current="page"{{ end }}
+  {{ if $isPost }}itemprop="url"{{end}}
+>
+{{ if $isPost }}<span itemprop="name">{{end}}
 {{ site.Title }}
-</a></h1>
+{{ if $isPost }}</span>{{end}}
+</a>
+</h1>
 <nav><ul>
 {{- range site.Menus.main }}
   <li><a href="{{ .URL }}"{{ if $.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
