@@ -907,6 +907,14 @@ figure.codeblock {
   padding: 0;
 }
 
+figure.codeblock.wide {
+  width: calc(var(--base) * 30);
+  max-width: calc(100vw - var(--base));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .codeblock figcaption {
   padding: 0 calc(var(--base) / 2);
   font-family: NationalPark, system-ui, sans-serif;

@@ -23,7 +23,7 @@ Below is one method of updating the shared lock file before updating each server
 The [_update-flake-lock_ GitHub Action][action] updates your project's flake lock file on a schedule. It essentially runs
 `nix flake update --commit-lock-file` and then opens a pull request. Add it to your NixOS config repository like this:
 
-```yaml{name="/.github/workflows/main.yml"}
+```yaml{name="/.github/workflows/main.yml", wide=true}
 name: update-dependencies
 on:
   workflow_dispatch: # allows manual triggering
@@ -42,9 +42,10 @@ jobs:
 
 Add this step if you want to automatically merge the pull request:
 
-```yaml
+```yaml{wide=true}
       - name: Merge
-        run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
+        run:
+          gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: ${{ steps.update.outputs.pull-request-number != '' }}
@@ -60,7 +61,7 @@ Next, it's time to configure NixOS to pull changes and rebuild. The configuratio
 * `rebuild` rebuilds and switches to the new configuration, and reboots if required. It's
   [a simplified version of `autoUpgrade`'s script][auto-upgrade-script].
 
-```nix{title="NixOS Config"}
+```nix{title="NixOS Config", wide=true}
 systemd.services.pull-updates = {
   description = "Pulls changes to system config";
   restartIfChanged = false;
