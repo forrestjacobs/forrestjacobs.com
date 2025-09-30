@@ -756,6 +756,17 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+body:has(#show-lines:checked) {
+  background: linear-gradient(
+    to bottom,
+    var(--light),
+    var(--light) 3%,
+    var(--lightest) 3%,
+    var(--lightest)
+  );
+  background-size: 100% var(--base);
+}
+
 ::selection {
   color: var(--lightest);
   background-color: var(--brand);
@@ -820,6 +831,10 @@ body>footer>ul {
   list-style-type: none;
   margin: 0 0 var(--base) 0;
   padding: 0;
+}
+
+body>footer>div {
+  margin: var(--base) 0;
 }
 
 body>footer a {
@@ -1002,7 +1017,6 @@ sup {
   margin: var(--base) 0;
   display: flex;
   flex-flow: row wrap;
-  align-items: baseline;
   column-gap: var(--base);
 }
 
