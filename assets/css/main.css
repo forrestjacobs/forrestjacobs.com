@@ -884,8 +884,11 @@ ul {
 
 figure {
   outline: 1px solid var(--light);
-  background: color-mix(in srgb, var(--lightest), var(--light) 10%);
   margin: var(--base) 0;
+}
+
+figure:not(.youtube):not(.codeblock) {
+  background: color-mix(in srgb, var(--lightest), var(--light) 10%);
   padding: calc(var(--base) / 2);
 }
 
@@ -1054,7 +1057,6 @@ sup {
 
 figure.youtube {
   outline: 0;
-  padding: 0;
   position: relative;
 }
 

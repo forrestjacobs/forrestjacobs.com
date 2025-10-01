@@ -1,0 +1,11 @@
+{{- with resources.Get "scripts/main.ts" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build (dict) }}
+<script src="{{ .RelPermalink }}" defer></script>
+    {{- end }}
+  {{- else }}
+    {{- with . | js.Build (dict "minify" true) | fingerprint }}
+<script src="{{ .RelPermalink }}" defer integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
