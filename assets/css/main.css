@@ -952,6 +952,7 @@ samp {
   display: block;
   margin: var(--base) 0;
   padding: 0 calc(var(--base) / 2);
+  border-left: 2px solid var(--light);
   white-space: pre-wrap;
 }
 
