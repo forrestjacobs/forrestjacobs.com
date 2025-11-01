@@ -1,6 +1,7 @@
 [tools]
 ffmpeg = "8.0"
 hugo = "0.147.8"
+node = "22"
 python = "3.14.0"
 
 [tools."asdf:duhow/asdf-yt-dlp"]
@@ -8,6 +9,12 @@ version = "2025.09.26"
 
 [tasks.dev]
 run = "hugo serve"
+
+[tasks."dev:pagefind"]
+run = "npx -y pagefind@1.4.0 --serve"
+
+[tasks.build]
+run = "hugo --gc --minify && npx -y pagefind@1.4.0"
 
 [tasks.fetch-yt-thumbnail]
 alias = "thumb"

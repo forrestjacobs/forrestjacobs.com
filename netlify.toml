@@ -1,6 +1,7 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify"
+command = "hugo --gc --minify && npx -y pagefind@1.4.0"
 
 [build.environment]
 HUGO_VERSION = "0.147.8"
+NODE_VERSION = "22"

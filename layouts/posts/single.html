@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ .Permalink }}" itemref="author">
 <header>
-<h2 itemprop="name headline">{{ .Title }}</h2>
+<h2 itemprop="name headline" data-pagefind-meta="title">{{ .Title }}</h2>
 {{ partial "date.html" (dict "Date" .Date "IsDatePublished" true) }}
 </header>
 <section itemprop="articleBody">

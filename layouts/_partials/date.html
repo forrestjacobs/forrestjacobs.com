@@ -3,6 +3,7 @@
         itemprop="datePublished"
     {{ end }}
     datetime="{{ .Date | time.Format "2006-01-02T15:04:05Z07:00" }}"
+    data-pagefind-meta="date"
 >
 {{ .Date | time.Format "02 Jan 2006" }}
 </time>

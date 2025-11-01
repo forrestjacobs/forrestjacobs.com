@@ -20,6 +20,7 @@ baseName = "rss"
 
 [params]
 description = "Forrest Jacobs’s personal technical blog."
+pagefind = true
 
 [permalinks]
 page.posts = '/:slug/'
@@ -40,3 +41,8 @@ weight = 20
 [[menus.main]]
 pageRef = '/projects'
 weight = 30
+
+[[menus.main]]
+pageRef = '/search'
+weight = 40
+params.class = 'search-nav'

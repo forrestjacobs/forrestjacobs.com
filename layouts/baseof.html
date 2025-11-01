@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {{ $isPost := and .IsPage (eq .Section "posts") }}
+{{ $enablePagefind := and .IsPage (.Param "pagefind") }}
 
 <html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 
@@ -41,12 +42,15 @@
 </h1>
 <nav><ul>
 {{- range site.Menus.main }}
-  <li><a href="{{ .URL }}"{{ if $.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+  <li><a href="{{ .URL }}"
+    {{ if $.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}
+    {{ if .Params.class }} class="{{ .Params.class }}"{{ end }}
+  >{{ .Name }}</a></li>
 {{- end }}
 </ul></nav>
 </header>
 
-<main>
+<main {{ if $enablePagefind }}data-pagefind-body{{ end }}>
 {{ block "main" . }}{{ end }}
 </main>
 
