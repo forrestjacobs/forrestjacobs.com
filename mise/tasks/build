@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+hugo --gc --minify && npx -y pagefind@1.4.0

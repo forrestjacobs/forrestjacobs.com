@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify && npx -y pagefind@1.4.0"
+command = "./mise/tasks/build"
 
 [build.environment]
 HUGO_VERSION = "0.147.8"

@@ -13,9 +13,6 @@ run = "hugo serve"
 [tasks."dev:pagefind"]
 run = "npx -y pagefind@1.4.0 --serve"
 
-[tasks.build]
-run = "hugo --gc --minify && npx -y pagefind@1.4.0"
-
 [tasks.fetch-yt-thumbnail]
 alias = "thumb"
 run = "./fetch-yt-thumbnail.sh"
