@@ -1,6 +1,6 @@
 +++
 title = "Search"
-params.pagefind = false
+sitemap.disable = true
 +++
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
