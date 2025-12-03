@@ -4,6 +4,8 @@
   --logo-bg: #ADCF91;
   --logo-fg: #203A38;
 
+  --figure-bg: #f5f1e1;
+
   --lightest: #fffcf6; /* background */
   --light: var(--logo-bg); /* line */
   --dark: color-mix(in srgb, var(--darkest), var(--brand) 50%); /* light words */
@@ -397,6 +399,7 @@
     --light: #0F7554;
     --darkest: #DEDDCE;
     --brand: var(--logo-bg);
+    --figure-bg: #282828;
   }
 
   /* Background */
@@ -905,7 +908,7 @@ ul {
 
 figure {
   margin: var(--base) 0;
-  background: color-mix(in srgb, transparent, var(--light) 50%);
+  background: var(--figure-bg);
   padding: calc(var(--base) / 2) var(--base);
   border-radius: calc(var(--base) / 2);
 }
@@ -939,6 +942,7 @@ a:hover.permalink {
 }
 
 figure.codeblock {
+  background: var(--light);
   padding: 0;
 }
 
