@@ -1,6 +1,7 @@
 +++
 title = "Search"
 sitemap.disable = true
+params.showTitle = false
 +++
 
 <script src="/pagefind/pagefind-ui.js"></script>
