@@ -1,6 +1,4 @@
 {{ define "main" }}
-{{ if .Param "showTitle" }}
-<h2 data-pagefind-meta="title">{{ .Title }}</h2>
-{{ end }}
+<h1 data-pagefind-meta="title">{{ .Title }}</h1>
 {{ .Content }}
 {{ end }}

@@ -11,7 +11,7 @@ bricked my environment[^wsl-brick]. Below are the steps that ended up working fo
 [NixOS]: https://nixos.org/
 [NixOS on WSL]: https://github.com/nix-community/NixOS-WSL
 
-### Goals
+## Goals
 
 - Set up NixOS in WSL 2 on a new Windows 11 install (version 22H2.)
 - Reuse my flake-based configuration from my other NixOS 22.11 installations.
@@ -19,7 +19,7 @@ bricked my environment[^wsl-brick]. Below are the steps that ended up working fo
 
 [native _systemd_ support in WSL]: https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/
 
-### Step 1: Install WSL 2
+## Step 1: Install WSL 2
 
 Per [Microsoft's documentation]:
 
@@ -29,7 +29,7 @@ Per [Microsoft's documentation]:
 
 [Microsoft's documentation]: https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command
 
-### Step 2: Install NixOS
+## Step 2: Install NixOS
 
 Per [NixOS-WSL's documentation]:
 
@@ -48,7 +48,7 @@ Per [NixOS-WSL's documentation]:
 [NixOS-WSL's documentation]: https://github.com/nix-community/NixOS-WSL#quick-start
 [NixOS-WSL's 22.05 release]: https://github.com/nix-community/NixOS-WSL/releases/tag/22.05-5c211b47
 
-### Step 3: Configure NixOS
+## Step 3: Configure NixOS
 
 At this point you should have a basic NixOS 22.05 installation! Let's finish up by setting a username, switching over to
 flakes, updating to NixOS 22.11, and enabling native _systemd_:
@@ -113,7 +113,7 @@ flakes, updating to NixOS 22.11, and enabling native _systemd_:
 
 [Helix]: https://helix-editor.com/
 
-### Step 4: Cleaning up
+## Step 4: Cleaning up
 
 - Rename `wsl.automountPath` to `wsl.wslConf.automount.root` in `configuration.nix` to match NixOS-WSL's latest
   configuration.
@@ -122,7 +122,7 @@ flakes, updating to NixOS 22.11, and enabling native _systemd_:
 - You can run `sudo nix-channel --remove nixos` if you don't want the channel hanging around now that we're using
   flakes.
 
-### Addendum: Share `.ssh` directory with Windows
+## Addendum: Share `.ssh` directory with Windows
 
 It turns out that [file permissions set in WSL are preserved in NTFS][][^fs-perm-wsl-ntfs]. You can store your SSH
 configuration files in Windows, and still use them from WSL with no permissions issues:
@@ -135,7 +135,7 @@ That's it! You can verify that permissions carried over with `ls -al ~/.ssh/`
 
 [file permissions set in WSL are preserved in NTFS]: https://learn.microsoft.com/en-us/windows/wsl/file-permissions
 
-### Addendum: Set up _fish_ in NixOS the right way
+## Addendum: Set up _fish_ in NixOS the right way
 
 I use [_fish_] as my shell, but when I set it up in WSL I started getting errors like this:
 
@@ -161,7 +161,7 @@ whether the issue appears or not.
 
 [_fish_]: https://fishshell.com/
 
-### See also
+## See also
 
 - [Nix Flakes on WSL](https://xeiaso.net/blog/nix-flakes-4-wsl-2022-05-01) by [Xe Iaso](https://xeiaso.net/)
 

@@ -785,7 +785,7 @@ body>header {
   column-gap: calc(var(--base) * 1);
 }
 
-body>header>h1 {
+body>header>#author {
   font-family: NationalPark, system-ui, sans-serif;
   font-size: 1.125rem;
   text-transform: uppercase;
@@ -794,7 +794,7 @@ body>header>h1 {
   margin: 0;
 }
 
-body>header>h1>a {
+body>header>#author>a {
   background-color: var(--logo-bg);
   color: var(--logo-fg);
   padding: var(--base) 0;
@@ -858,24 +858,26 @@ body>footer a {
   color: var(--darkest);
 }
 
-h2, h3 {
+main h1, h2, h3, h4 {
   font-family: NationalPark, system-ui, sans-serif;
   font-weight: 500;
   margin: var(--base) 0;
 }
 
-h3 {
+main h1 {
+  font-size: 1.5rem;
+}
+
+h2:not(.home-post *), .home-post h3 {
+  font-size: 1.175rem;
+  color: var(--dark);
   position: relative;
   top: calc(var(--base) / 2);
 }
 
-h3, h4 {
+h3:not(.home-post *), .home-post h4 {
+  font-size: 1rem;
   color: var(--dark);
-}
-
-h4 {
-  font-family: NationalPark, system-ui, sans-serif;
-  font-weight: 700;
   margin: var(--base) 0 0 0;
 }
 
@@ -1005,11 +1007,12 @@ article>header {
   margin-bottom: var(--base);
 }
 
-article>header h2 {
+article>header h1, article>header h2 {
+  font-size: 1.5rem;
   margin-bottom: calc(var(--base) / 2);
 }
 
-article>header h2>a {
+article>header a {
   color: var(--darkest);
 }
 
@@ -1067,7 +1070,7 @@ sup {
   outline: 2px solid var(--light);
 }
 
-.grid-list-wrapper>ul>li h3 {
+.grid-list-wrapper>ul>li h2 {
   margin-top: 0;
 }
 

@@ -20,7 +20,6 @@ baseName = "rss"
 
 [params]
 description = "Forrest Jacobs’s personal technical blog."
-showTitle = true
 
 [permalinks]
 page.posts = '/:slug/'
