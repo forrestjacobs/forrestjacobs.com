@@ -110,6 +110,12 @@ body>header {
       display: block;
       text-align: center;
       text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--logo-fg);
+      }
     }
   }
 
