@@ -190,27 +190,35 @@ article {
   }
 }
 
-main h1, h2, h3, h4 {
-  font-family: NationalPark, system-ui, sans-serif;
-  font-weight: 500;
-  margin: var(--base) 0;
-}
+main {
+  h1, h2, h3, h4 {
+    font-family: NationalPark, system-ui, sans-serif;
+    font-weight: 500;
+    margin: var(--base) 0;
 
-main h1 {
-  font-size: 1.5rem;
-}
+    a:has(svg) {
+      display: inline-flex;
+      align-items: baseline;
+      column-gap: 0.5rem;
+    }
+  }
 
-h2:not(#home-main *), #home-main h3 {
-  font-size: 1.175rem;
-  color: var(--dark);
-  position: relative;
-  top: calc(var(--base) / 2);
-}
+  h1 {
+    font-size: 1.5rem;
+  }
 
-h3:not(#home-main *), #home-main h4 {
-  font-size: 1rem;
-  color: var(--dark);
-  margin: var(--base) 0 0 0;
+  h2:not(#home-main *), #home-main h3 {
+    font-size: 1.175rem;
+    color: var(--dark);
+    position: relative;
+    top: calc(var(--base) / 2);
+  }
+
+  h3:not(#home-main *), #home-main h4 {
+    font-size: 1rem;
+    color: var(--dark);
+    margin: var(--base) 0 0 0;
+  }
 }
 
 p {
