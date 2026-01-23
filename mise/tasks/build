@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-mise exec hugo -- hugo --gc --minify && mise exec npx -- npx -y pagefind@1.4.0
+mise exec hugo -- hugo --gc --minify && mise exec node -- npx -y pagefind@1.4.0
