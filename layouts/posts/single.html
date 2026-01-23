@@ -1,4 +1,5 @@
 {{ define "main" }}
+<main {{ if ne .Sitemap.Disable true }}data-pagefind-body{{ end }}>
 <article itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ .Permalink }}" itemref="author">
 <header>
 <h1 itemprop="name headline" data-pagefind-meta="title">{{ .Title }}</h1>
@@ -8,4 +9,5 @@
 {{ .Content }}
 </section>
 </article>
+</main>
 {{ end }}

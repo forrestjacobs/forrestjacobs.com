@@ -57,9 +57,7 @@
 </ul></nav>
 </header>
 
-<main {{ if and .IsPage (ne .Sitemap.Disable true) }}data-pagefind-body{{ end }}>
 {{ block "main" . }}{{ end }}
-</main>
 
 <footer>
 <ul>

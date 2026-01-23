@@ -1,4 +1,13 @@
 {{ define "main" }}
+<main
+  {{ if ne .Sitemap.Disable true }}
+    data-pagefind-body
+  {{ end }}
+  {{ with .File }}
+    id="{{ .BaseFileName }}-main"
+  {{ end }}
+>
 <h1 data-pagefind-meta="title">{{ .Title }}</h1>
 {{ .Content }}
+</main>
 {{ end }}

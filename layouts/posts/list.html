@@ -1,6 +1,7 @@
 {{ define "main" }}
+<main id="archive-main">
 <h1>{{ .Title }}</h1>
-<ul id="archive-list">
+<ul>
 {{ range .Pages }}
 <li>
 {{ partial "date.html" (dict "Date" .Date) }}
@@ -8,4 +9,5 @@
 </li>
 {{ end }}
 </ul>
+</main>
 {{ end }}
