@@ -7,9 +7,6 @@ python = "3.14.0"
 [tools."asdf:duhow/asdf-yt-dlp"]
 version = "2025.09.26"
 
-[tasks.build]
-run = "hugo --gc --minify && npx -y pagefind@1.4.0"
-
 [tasks.dev]
 run = "hugo serve"
 

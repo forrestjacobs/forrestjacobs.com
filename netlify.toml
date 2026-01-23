@@ -1,7 +1,3 @@
 [build]
 publish = "public"
-command = "mise run build"
-
-[build.environment]
-HUGO_VERSION = "0.147.8"
-NODE_VERSION = "22"
+command = "./mise/tasks/build"
