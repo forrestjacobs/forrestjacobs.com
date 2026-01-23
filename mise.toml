@@ -1,6 +1,6 @@
 [tools]
 ffmpeg = "8.0"
-hugo = "0.147.8"
+hugo = "0.152"
 node = "22"
 python = "3.14.0"
 
