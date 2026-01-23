@@ -285,9 +285,12 @@ figure.codeblock {
 }
 
 figure.youtube {
-  position: relative;
   background: none;
   padding: 0;
+
+  &>div {
+    position: relative;
+  }
 
   a {
     position: absolute;
@@ -312,6 +315,7 @@ figure.youtube {
   }
 
   img {
+    display: block;
     max-width: 100%;
     width: auto;
     height: auto;
