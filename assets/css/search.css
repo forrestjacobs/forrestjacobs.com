@@ -64,7 +64,7 @@
     font-size: 1rem;
   }
 
-  .pagefind-ui__search-clear.svelte-e9gkc3 {
+  .pagefind-ui__search-clear {
     position: absolute;
     top: 0;
     right: 0;
@@ -75,11 +75,10 @@
     background-color: transparent;
     border-radius: var(--base);
     border: 0;
-  }
 
-  .pagefind-ui__suppressed.svelte-e9gkc3 {
-    opacity: 0;
-    pointer-events: none;
+    &.pagefind-ui__suppressed {
+      display: none;
+    }
   }
 
   .pagefind-ui__message {
