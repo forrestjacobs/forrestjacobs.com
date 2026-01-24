@@ -18,7 +18,6 @@
     outline: 2px solid var(--light);
     height: calc(var(--base) * 2);
     padding: 0 calc(var(--base) * 2);
-    border-radius: var(--base);
     font-size: 1rem;
     color: var(--brand);
     background: transparent;
@@ -59,7 +58,6 @@
     background-color: var(--lightest);
     outline: 2px solid var(--light);
     border: 0;
-    border-radius: var(--base);
 
     font-size: 1rem;
   }
@@ -73,7 +71,6 @@
     font-size: 1rem;
     cursor: pointer;
     background-color: transparent;
-    border-radius: var(--base);
     border: 0;
 
     &.pagefind-ui__suppressed {

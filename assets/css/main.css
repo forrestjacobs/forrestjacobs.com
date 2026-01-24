@@ -141,7 +141,6 @@ body>header {
         width: var(--base);
         text-indent:-99999rem;
         position: relative;
-        border-radius: 100%;
 
         &::before {
           content: "";
@@ -154,7 +153,7 @@ body>header {
         }
 
         &:hover {
-          background-color: var(--light);
+          outline: 2px solid var(--light);
         }
       }
     }
@@ -261,7 +260,6 @@ figure {
   margin: var(--base) 0;
   background: var(--figure-bg);
   padding: calc(var(--base) / 2) var(--base);
-  border-radius: calc(var(--base) / 2);
 
   &>img {
     display: block;
@@ -375,7 +373,6 @@ time {
 kbd {
   border: 1px solid var(--light);
   padding: 0.25rem;
-  border-radius: 0.25rem;
 }
 
 hr {
