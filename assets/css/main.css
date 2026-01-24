@@ -140,11 +140,20 @@ body>header {
       &.search-nav {
         width: var(--base);
         text-indent:-99999rem;
-        background-color: var(--dark);
-        mask: var(--search-icon) center calc(var(--base) * 0.625) no-repeat;
-        
-        &:hover {
-          background-color: var(--darkest);
+        position: absolute;
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: var(--base);
+          height: var(--base);
+          background-color: var(--dark);
+          mask: var(--search-icon) center no-repeat;
+
+          &:hover {
+            background-color: var(--darkest);
+          }
         }
       }
     }
