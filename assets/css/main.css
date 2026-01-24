@@ -122,8 +122,7 @@ body>header {
   ul {
     display: flex;
     flex-wrap: wrap;
-    row-gap: var(--base);
-    column-gap: calc(var(--base) * 1.25);
+    column-gap: calc(var(--base) * .5);
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -131,16 +130,18 @@ body>header {
     a {
       display: block;
       color: var(--darkest);
-      padding: calc(var(--base) * .5) 0;
+      padding: calc(var(--base) * .5);
 
       &[aria-current="page"] {
         color: var(--dark);
       }
 
       &.search-nav {
+        display: block;
         width: var(--base);
         text-indent:-99999rem;
-        position: absolute;
+        position: relative;
+        border-radius: 100%;
 
         &::before {
           content: "";
@@ -150,10 +151,10 @@ body>header {
           height: var(--base);
           background-color: var(--dark);
           mask: var(--search-icon) center no-repeat;
+        }
 
-          &:hover {
-            background-color: var(--darkest);
-          }
+        &:hover {
+          background-color: var(--light);
         }
       }
     }
