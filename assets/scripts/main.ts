@@ -1,4 +1,4 @@
-const BASE = 26;
+const BASE = parseFloat(window.getComputedStyle(document.documentElement).fontSize) * 1.625;
 const observed = new Set<HTMLElement>();
 
 /* @__PURE__ */
