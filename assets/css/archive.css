@@ -6,7 +6,7 @@
   }
 
   li {
-    margin: var(--base) 0;
+    margin: var(--base) 0 0 0;
     display: flex;
     flex-flow: row wrap;
     column-gap: var(--base);
