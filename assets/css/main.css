@@ -314,8 +314,9 @@ figure.codeblock {
   }
 }
 
-.goat svg {
+.goat>svg {
   display: block;
+  font-size: 16px;
 }
 
 figure.youtube {
@@ -381,6 +382,10 @@ time {
   font-family: "JetBrains Mono", monospace;
   font-variant-ligatures: none;
   font-size: 0.9em;
+}
+
+.goat>svg {
+  font-size: 14px;
 }
 
 :not(pre)>code {
