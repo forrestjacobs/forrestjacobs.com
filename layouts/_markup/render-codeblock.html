@@ -6,7 +6,7 @@
 <figcaption>{{ . }}</figcaption>
 {{- end }}
 {{- if transform.CanHighlight .Type }}
-<pre role="document" tabindex="0" class="chroma" style="height: {{ .Inner | strings.Count "\n" | add 1.5 | mul 26 }}px"><code class="language-{{ .Type }}">
+<pre role="document" tabindex="0" class="chroma" style="height: {{ .Inner | strings.Count "\n" | add 1.5 | mul 1.625 }}rem"><code class="language-{{ .Type }}">
 {{- with transform.HighlightCodeBlock . -}}
 {{ .Inner }}
 {{- end -}}
