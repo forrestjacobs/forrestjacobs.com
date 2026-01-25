@@ -24,8 +24,8 @@ const resizeObserver = new ResizeObserver((entries) => {
         
         const width = e.contentBoxSize[0].inlineSize;
         const height = `${Math.ceil(width / ratio / BASE) * BASE}px`;
-        if (target.style.height !== height) {
-            target.style.height = height;
+        if (target.style.minHeight !== height) {
+            target.style.minHeight = height;
         }
     }
 });

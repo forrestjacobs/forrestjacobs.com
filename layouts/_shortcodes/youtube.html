@@ -9,6 +9,10 @@
 <figcaption><a href="{{ $url }}">
 <span><span class="title">{{ $title }}</span> by {{ $channel }} on YouTube</span>
 </a></figcaption>
-<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="Thumbnail for {{ $title }}">
+<img src="{{ $image.RelPermalink }}"
+  style="max-width: 100%; width: auto; height: auto;"
+  width="{{ $image.Width }}" height="{{ $image.Height }}"
+  alt="Thumbnail for {{ $title }}"
+>
 </div>
 </figure>

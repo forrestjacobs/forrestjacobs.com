@@ -314,6 +314,10 @@ figure.codeblock {
   }
 }
 
+.goat svg {
+  display: block;
+}
+
 figure.youtube {
   background: none;
   padding: 0;
@@ -346,9 +350,6 @@ figure.youtube {
 
   img {
     display: block;
-    max-width: 100%;
-    width: auto;
-    height: auto;
   }
 }
 
