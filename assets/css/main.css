@@ -14,6 +14,16 @@
   --brand: #0F7554;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lightest: var(--logo-fg);
+    --light: #0F7554;
+    --darkest: #DEDDCE;
+    --brand: var(--logo-bg);
+    --figure-bg: #282828;
+  }
+}
+
 @font-face {
   font-family: NationalPark;
   src: url("/fonts/NationalPark-VariableVF.woff2") format("woff2");
@@ -46,16 +56,6 @@
   src: url("/fonts/JetBrainsMono-2.304/JetBrainsMono-BoldItalic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --lightest: var(--logo-fg);
-    --light: #0F7554;
-    --darkest: #DEDDCE;
-    --brand: var(--logo-bg);
-    --figure-bg: #282828;
-  }
 }
 
 body {
@@ -385,8 +385,9 @@ kbd {
 }
 
 hr {
-  border: 1px solid var(--light);
-  margin: calc(var(--base) * 2 - 1px) 0;
+  border: 0;
+  outline: 1px solid var(--light);
+  margin: calc(var(--base) * 2) 0;
 }
 
 sup {
