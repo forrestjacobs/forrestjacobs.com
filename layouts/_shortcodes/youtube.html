@@ -4,8 +4,8 @@
 {{- $image := .Page.Resources.Get (printf "%s.webp" $id) }}
 {{- $url := printf "https://www.youtube.com/watch?v=%s" $id }}
 
-<figure class="youtube">
-<div>
+<div class="youtube">
+<figure>
 <figcaption><a href="{{ $url }}">
 <span><span class="title">{{ $title }}</span> by {{ $channel }} on YouTube</span>
 </a></figcaption>
@@ -14,5 +14,5 @@
   width="{{ $image.Width }}" height="{{ $image.Height }}"
   alt="Thumbnail for {{ $title }}"
 >
-</div>
 </figure>
+</div>

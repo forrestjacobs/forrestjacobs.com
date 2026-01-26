@@ -315,13 +315,10 @@ figure.codeblock {
   font-size: 16px;
 }
 
-figure.youtube {
+.youtube > figure {
+  position: relative;
   background: none;
   padding: 0;
-
-  &>div {
-    position: relative;
-  }
 
   a {
     position: absolute;
