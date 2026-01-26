@@ -390,6 +390,7 @@ time {
 
 kbd {
   border: 1px solid var(--light);
+  box-shadow: 1px 1px var(--light);
   padding: 0.25rem;
 }
 
