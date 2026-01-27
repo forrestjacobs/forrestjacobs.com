@@ -298,7 +298,7 @@ figure.codeblock {
     padding: 0 var(--base);
     font-family: NationalPark, system-ui, sans-serif;
     font-weight: 500;
-    color: var(--dark)
+    color: var(--darkest)
   }
 
   pre {
