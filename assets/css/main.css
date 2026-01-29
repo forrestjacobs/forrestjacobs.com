@@ -70,6 +70,7 @@ body {
   flex-direction: column;
   background: var(--lightest);
   color: var(--darkest);
+  accent-color: var(--brand);
   font-family: system-ui, sans-serif;
   line-height: var(--base);
   padding: 0 calc(var(--base) / 2);
