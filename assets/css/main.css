@@ -58,6 +58,12 @@
   font-style: italic;
 }
 
+@media (min-width: 1000px) {
+  html {
+    zoom: 1.1;
+  }
+}
+
 body {
   display: flex;
   min-height: 100vh;
