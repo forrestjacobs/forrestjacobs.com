@@ -140,6 +140,11 @@ body>header {
     }
   }
 
+  ul {
+    padding-left: calc(var(--base) * 0.5);
+    padding-right: calc(var(--base) * 0.375);
+  }
+
   ul a {
     text-decoration: none;
 
@@ -157,7 +162,6 @@ body>header {
       height: var(--base);
       padding: calc(var(--base) * .375);
       margin: calc(var(--base) * -.375);
-      margin-right: 0;
       text-indent:-99999rem;
       position: relative;
 
