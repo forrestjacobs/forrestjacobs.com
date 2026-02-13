@@ -1,4 +1,3 @@
-const BASE = parseFloat(window.getComputedStyle(document.documentElement).fontSize) * 1.625;
 const observed = new Set<HTMLElement>();
 
 /* @__PURE__ */
@@ -15,6 +14,7 @@ function getRatio(target: HTMLElement): number | undefined {
 }
 
 const resizeObserver = new ResizeObserver((entries) => {
+    const base = parseFloat(window.getComputedStyle(document.documentElement).fontSize) * 1.625;
     for (const e of entries) {
         const target = (e.target as HTMLElement);
         const ratio = getRatio(target);
@@ -23,7 +23,7 @@ const resizeObserver = new ResizeObserver((entries) => {
         }
         
         const width = e.contentBoxSize[0].inlineSize;
-        const height = `${Math.ceil(width / ratio / BASE) * BASE}px`;
+        const height = `${Math.ceil(width / ratio / base) * base}px`;
         if (target.style.minHeight !== height) {
             target.style.minHeight = height;
         }
