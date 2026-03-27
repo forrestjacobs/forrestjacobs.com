@@ -294,7 +294,7 @@ figure {
 }
 
 figure.codeblock {
-  background: var(--light);
+  background: none;
   padding: 0;
 
   &.wide {
@@ -309,7 +309,8 @@ figure.codeblock {
     padding: 0 var(--base);
     font-family: NationalPark, system-ui, sans-serif;
     font-weight: 500;
-    color: var(--darkest)
+    color: var(--darkest);
+    background: var(--light);
   }
 
   pre {
@@ -318,6 +319,7 @@ figure.codeblock {
     padding-bottom: 0;
     overflow: auto;
     scrollbar-width: thin;
+    background: var(--figure-bg);
   }
 }
 

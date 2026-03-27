@@ -1,3 +1,4 @@
+{{- $height := strings.Count "\n" .Inner | add 1 | mul 1.421875 }}
 <figure class="codeblock{{with .Attributes.wide}} wide{{end}}">
 {{- with .Attributes.name }}
 <figcaption class="name">{{ . }}</figcaption>
@@ -5,16 +6,19 @@
 {{- with .Attributes.title }}
 <figcaption>{{ . }}</figcaption>
 {{- end }}
-{{- if transform.CanHighlight .Type }}
+<div style="height: {{ div $height 1.625 | math.Ceil | add 1 | mul 1.625 }}rem;">
 <pre
-    role="document" tabindex="0" class="chroma"
-    style="line-height: 1.625rem;height: {{ .Inner | strings.Count "\n" | add 1.5 | mul 1.625 }}rem;"
-><code class="language-{{ .Type }}">
+    role="document" tabindex="0"{{if transform.CanHighlight .Type}} class="chroma"{{end}}
+    style="line-height: 1.421875rem;height: {{ add $height 0.8125 }}rem;"
+>
+{{- if transform.CanHighlight .Type }}
+<code class="language-{{ .Type }}">
 {{- with transform.HighlightCodeBlock . -}}
 {{ .Inner }}
 {{- end -}}
-</code></pre>
+</code>
 {{- else }}
-<pre role="document" tabindex="0"><code>{{ .Inner }}</code></pre>
-{{- end }}
+<code>{{ .Inner }}</code>
+{{- end }}</pre>
+</div>
 </figure>
