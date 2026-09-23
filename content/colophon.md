@@ -7,7 +7,7 @@ lastmod = 2025-07-08 23:56:00
 
 * Repo: [forrestjacobs.com @ Github](https://github.com/forrestjacobs/forrestjacobs.com)
 * Static Site Generator: [Hugo](https://gohugo.io/)
-* Deployment & Hosting: [Netlify](https://www.netlify.com/)
+* Deployment & Hosting: [Netlify](https://www.netlify.com/). Also hosted at <a href="https://forrestjacobs.netlify.app/" rel="nofollow">forrestjacobs.netlify.app</a>.
 
 ## Typefaces
 

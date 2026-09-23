@@ -15,6 +15,7 @@
 {{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
 <meta name="description" content="{{ trim . "\n\r\t " }}">
 {{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
 {{ partial "opengraph.html" . }}
 {{- partialCached "javascript.html" . -}}
