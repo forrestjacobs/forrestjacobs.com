@@ -58,7 +58,7 @@
   font-style: italic;
 }
 
-@media (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
   html {
     font-size: 110%;
   }
@@ -73,21 +73,24 @@ body {
   accent-color: var(--brand);
   font-family: system-ui, sans-serif;
   line-height: var(--base);
-  padding: 0 calc(var(--base) / 2);
   margin: 0 auto;
-  max-width: calc(var(--base) * 25);
-  text-size-adjust: 100%; 
+  text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 
-  &:has(#show-lines:checked) {
-    background: linear-gradient(
-      to bottom,
-      var(--light),
-      var(--light) 3%,
-      var(--lightest) 3%,
-      var(--lightest)
-    );
-    background-size: 100% var(--base);
+  @media screen {
+    padding: 0 calc(var(--base) / 2);
+    max-width: calc(var(--base) * 25);
+
+    &:has(#show-lines:checked) {
+      background: linear-gradient(
+        to bottom,
+        var(--light),
+        var(--light) 3%,
+        var(--lightest) 3%,
+        var(--lightest)
+      );
+      background-size: 100% var(--base);
+    }
   }
 }
 
@@ -127,6 +130,9 @@ body>header {
   align-items: center;
   row-gap: var(--base);
   column-gap: calc(var(--base) * 2);
+  @media print {
+    display: none;
+  }
 
   #author {
     font-family: NationalPark, system-ui, sans-serif;
@@ -190,6 +196,10 @@ body>header {
 
 body>footer {
   margin-top: calc(var(--base) * 6);
+
+  @media print {
+    display: none;
+  }
 
   &>div {
     margin-bottom: var(--base);
@@ -280,9 +290,13 @@ ul {
 }
 
 figure {
-  margin: var(--base) 0;
+  margin: var(--base) auto;
   background: var(--figure-bg);
   padding: calc(var(--base) / 2) var(--base);
+
+  @media print {
+    max-width: calc(var(--base) * 25);
+  }
 
   &>img {
     display: block;
@@ -297,12 +311,19 @@ figure.codeblock {
   background: none;
   padding: 0;
 
-  &.wide {
-    width: calc(var(--base) * 30);
-    max-width: calc(100vw - var(--base));
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+  @media print {
+    max-width: unset;
+    margin-left: var(--base);
+  }
+
+  @media screen {
+    &.wide {
+      width: calc(var(--base) * 30);
+      max-width: calc(100vw - var(--base));
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   figcaption {
@@ -357,6 +378,12 @@ figure.codeblock {
 
   img {
     display: block;
+  }
+}
+
+.youtube, .goat {
+  @media print {
+    min-height: unset !important;
   }
 }
 
